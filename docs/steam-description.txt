@@ -1,0 +1,33 @@
+[h1]Universal Auto Explore[/h1]
+
+Tired of only your Scout being able to wander off and reveal the map? This mod grants the game's built-in [b]auto-explore[/b] action to [b]every[/b] unit in Civilization VII. Any unit — Warriors, Settlers, Commanders, siege, ships, unique units, great people — can be told to go explore on its own and fill in the fog while you get on with running your empire.
+
+[hr][/hr]
+
+[h2]What it does[/h2]
+[list]
+[*][b]Auto-explore on everything.[/b] Select any unit and use the same "explore" command Scouts already have. The unit strikes out on its own, revealing terrain until it runs out of map or you give it new orders.
+[*][b]No new buttons, no UI, no fuss.[/b] It simply unlocks the vanilla action on units that were missing it. If you know how to auto-explore a Scout, you already know how to use this.
+[*][b]Nothing else changes.[/b] Combat, movement, costs, and every other rule stay exactly as the base game intends.
+[/list]
+
+[h2]Complete coverage[/h2]
+Instead of a hand-written list of units that goes stale every patch, this mod tags the [b]entire unit set[/b] in whatever age you're playing. That means it automatically covers:
+[list]
+[*]The full base game across [b]all three ages[/b] (Antiquity, Exploration, Modern)
+[*][b]Every DLC[/b] civ and leader pack you own
+[*][b]Independent-power units[/b] and any unit you capture
+[*][b]Future units[/b] added by later patches — no update needed
+[/list]
+Units that already know how to explore (Scouts, most warships, and a few uniques) are left untouched, so nothing is duplicated or broken.
+
+[h2]Compatibility[/h2]
+[list]
+[*]Built and verified against Civilization VII [b]1.4.1[/b].
+[*]Data-only and self-contained — it just adds a capability tag, so it plays nicely with almost everything and is safe to add to an ongoing game.
+[*]No dependencies beyond the base game. No DLC required (but all DLC is supported).
+[/list]
+
+[hr][/hr]
+
+[i]Enable under Additional Content, start or load a game, and send anyone off to map the world.[/i]

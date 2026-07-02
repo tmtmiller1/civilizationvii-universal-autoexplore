@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <EnglishText>
+        <Row Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME">
+            <Text>Universal Auto Explore</Text>
+        </Row>
+        <Row Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION">
+            <Text>Turns every unit into an explorer: grants the auto-explore action to all units, so any unit can be sent off to reveal the map automatically. Covers all base-game, DLC, and independent units. Updated for game version 1.4.1.</Text>
+        </Row>
+    </EnglishText>
+</Database>

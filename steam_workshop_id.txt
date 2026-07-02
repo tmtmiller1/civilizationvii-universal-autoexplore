@@ -1,0 +1,2 @@
+# The Steam Workshop publishedfileid is written here by the first publish.
+# Leave with no digits until then; release.sh treats an empty id as a new item.

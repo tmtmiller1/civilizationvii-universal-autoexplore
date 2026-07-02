@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="universal-auto-explore" version="1" xmlns="ModInfo">
+	<Properties>
+		<Name>LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME</Name>
+		<Description>LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION</Description>
+		<Authors>Tower</Authors>
+		<Package>UniversalAutoExplore</Package>
+		<PackageSortIndex>1000</PackageSortIndex>
+		<ShowInBrowser>1</ShowInBrowser>
+		<Version>1.0.0</Version>
+	</Properties>
+	<Dependencies>
+		<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
+	</Dependencies>
+	<ActionCriteria>
+		<!-- Met during any playable age, so the tag is re-applied to each age's
+		     freshly-built database (base + age + whichever DLC units loaded). -->
+		<Criteria id="in-any-age" any="true">
+			<AgeInUse>AGE_ANTIQUITY</AgeInUse>
+			<AgeInUse>AGE_EXPLORATION</AgeInUse>
+			<AgeInUse>AGE_MODERN</AgeInUse>
+		</Criteria>
+	</ActionCriteria>
+	<ActionGroups>
+		<!-- High LoadOrder so this runs after every unit type (base, age, and DLC)
+		     has been inserted into the current age's database. -->
+		<ActionGroup id="universal-auto-explore-grant" scope="game" criteria="in-any-age">
+			<Actions>
+				<UpdateDatabase>
+					<Item>data/grant-autoexplore.sql</Item>
+				</UpdateDatabase>
+			</Actions>
+			<Properties>
+				<LoadOrder>9999</LoadOrder>
+			</Properties>
+		</ActionGroup>
+	</ActionGroups>
+	<LocalizedText>
+		<File>text/en_us/ModuleText.xml</File>
+	</LocalizedText>
+</Mod>
