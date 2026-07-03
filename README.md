@@ -1,12 +1,32 @@
-# Universal Auto Explore
+# Universal Auto Explore for Civilization VII
 
-Grants the game's auto-explore action to **every** unit in Civilization VII, so
-any unit — not just Scouts — can be sent off to reveal the map on its own.
+Grants the game's built-in auto-explore action to **every** unit, so any unit —
+not just Scouts — can be sent off to reveal the map on its own. It does not change
+gameplay balance.
+
+## At a glance (for players)
+
+The "explore" command Civilization VII only gives your Scouts, unlocked on
+everything else — Warriors, Settlers, Commanders, siege, ships, unique units, and
+great people.
+
+- **One thing, done completely:** any unit can be told to auto-explore and fill in
+  the fog on its own.
+- **No new UI:** it unlocks a command the game already has. If you can auto-explore
+  a Scout, you can use this.
+- **Covers everything:** base game, all DLC, independent-power units, captured
+  units, and future patch units — automatically.
+- **Safe and additive:** it does not touch balance, movement, combat, costs, or
+  base-game files, and is safe to add to an ongoing game/save.
+
+At a glance (for modders):
 
 - **Mod id:** `universal-auto-explore`
 - **Author:** Tower
-- **Version:** 2.0.0
+- **Version:** 1.0.1
 - **Requires:** `base-standard` (i.e. the base game). No DLC required.
+
+---
 
 ## How it works
 
@@ -34,10 +54,10 @@ Why this shape:
 - **`INSERT OR IGNORE`** skips units that already carry the tag (they collide on
   the `TypeTags (Tag, Type)` primary key), so there is no duplicate-row load
   error and no need to maintain an exclusion list.
-- **Runs in every age.** The action group's `in-any-age` criteria is met in
-  Antiquity, Exploration, and Modern, so the patch re-applies to each age's
-  freshly built database. A high `LoadOrder` (9999) ensures it runs after all
-  unit types have been inserted.
+- **Runs on new games and loaded saves.** The action group uses `AlwaysMet`, so
+  the patch executes whenever game scope initializes, including save loads. A
+  high `LoadOrder` (9999) ensures it runs after all unit types have been
+  inserted.
 - **`SANDBOX` filter** drops the engine test units (`UNIT_SANDBOX`,
   `UNIT_AUDIO_SANDBOX_*`), which never appear in normal play.
 
@@ -54,12 +74,24 @@ universal_auto-explore/
   universal-auto-explore.modinfo   # mod manifest
   data/grant-autoexplore.sql       # the single set-based tag patch
   text/en_us/ModuleText.xml        # display name + description
-  README.md
+  README.md  README.pdf            # this document
   CHANGELOG.md                     # release history (drives the Steam change note)
+  CONTRIBUTING.md  LICENSE         # contributor guide + MIT license
   release.sh                       # build the Workshop package
   steam_workshop_id.txt            # publishedfileid, written on first publish
-  docs/workshop-preview.svg        # Steam preview card (rendered to preview.png)
+  images/
+    universal-auto-explore-icon.svg  # mod icon
+  docs/
+    steam-workshop-description.md        # full Steam store copy (BBCode)
+    steam-workshop-description-short.md  # short Steam store copy (BBCode)
+    workshop-preview.svg  workshop-preview.png  # Steam preview card
+  scripts/
+    build_readme_pdf.sh            # regenerate README.pdf
 ```
+
+Only the modinfo, `data/`, `text/`, README, CHANGELOG, and LICENSE ship in the
+Workshop zip; `docs/`, `images/`, `scripts/`, and the release tooling are
+repo-only (excluded by `release.sh`).
 
 Everything below `data/`, `text/`, plus the modinfo and README is what ships; the
 rest is release tooling and is excluded from the packaged zip.

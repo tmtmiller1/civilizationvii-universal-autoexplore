@@ -73,7 +73,8 @@ echo "==> Mirroring $SRC_DIR/ → $TARGET_DIR/ (excluding dev/release-only files
 rsync -a \
     --exclude='.git' --exclude='.gitignore' --exclude='.DS_Store' --exclude='dist' \
     --exclude='release.sh' --exclude='steam_workshop_id.txt' --exclude='docs' \
-    --exclude='images' --exclude='*.bak' --exclude='CONTRIBUTING.md' --exclude='README.pdf' \
+    --exclude='images' --exclude='scripts' --exclude='*.bak' \
+    --exclude='CONTRIBUTING.md' --exclude='README.pdf' \
     "$SRC_DIR"/ "$TARGET_DIR"/
 
 echo "==> Verifying modinfo at zip root"

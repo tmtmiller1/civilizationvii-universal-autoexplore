@@ -5,6 +5,14 @@ Loosely follows [Keep a Changelog](https://keepachangelog.com/) and Semantic
 Versioning. The Steam Workshop change note for each release is generated from the
 matching section below by `release.sh`.
 
+## [1.0.1] - 2026-07-02
+
+### Changed
+- Switched the game-scope database action criterion from age-gated to
+  `AlwaysMet` so the auto-explore tag patch is re-applied on loaded saves as
+  well as new games.
+- Updated docs to explicitly describe save compatibility behavior.
+
 ## [1.0.0] - 2026-07-02
 
 Initial release.
