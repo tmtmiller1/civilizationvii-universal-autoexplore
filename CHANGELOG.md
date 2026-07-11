@@ -5,6 +5,30 @@ Loosely follows [Keep a Changelog](https://keepachangelog.com/) and Semantic
 Versioning. The Steam Workshop change note for each release is generated from the
 matching section below by `release.sh`.
 
+## [1.0.2] - 2026-07-06
+
+Developer tooling and quality-gate release. **No gameplay changes** — the shipped
+mod (the auto-explore SQL patch and localized text) is byte-for-byte identical to
+1.0.1, so existing saves and setups are unaffected.
+
+### Added
+- No gameplay changes in this release: it only hardens the mod's developer
+  quality gates, so players do not need to do anything.
+- SQL contract test harness (`scripts/validate-sql.mjs`, run via
+  `npm run test:sql`) that asserts the grant patch keeps its safety-critical
+  shape — `INSERT OR IGNORE INTO TypeTags`, the `UNIT_CLASS_AUTOEXPLORE`
+  projection, the `KIND_UNIT` filter, and the `SANDBOX` exclusion — so a future
+  edit cannot silently drop coverage or reintroduce duplicate-row load errors.
+- `package.json` exposing `lint`, `test:sql`, and a combined `verify` script as
+  the single pre-release quality gate.
+- Dev-only ESLint flat config (`eslint.config.js`) that enforces complexity,
+  function-size, and line-length limits on any UI JavaScript added later.
+
+### Changed
+- `release.sh` now excludes the new developer tooling (`package.json`,
+  `eslint.config.js`, `node_modules`, lockfiles) from the packaged mod, so the
+  Workshop upload stays data-only and keeps passing the zip allow-list audit.
+
 ## [1.0.1] - 2026-07-02
 
 ### Changed

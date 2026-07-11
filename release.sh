@@ -75,6 +75,8 @@ rsync -a \
     --exclude='release.sh' --exclude='steam_workshop_id.txt' --exclude='docs' \
     --exclude='images' --exclude='scripts' --exclude='*.bak' \
     --exclude='CONTRIBUTING.md' --exclude='README.pdf' \
+    --exclude='package.json' --exclude='package-lock.json' \
+    --exclude='node_modules' --exclude='eslint.config.*' \
     "$SRC_DIR"/ "$TARGET_DIR"/
 
 echo "==> Verifying modinfo at zip root"
