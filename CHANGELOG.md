@@ -5,6 +5,29 @@ Loosely follows [Keep a Changelog](https://keepachangelog.com/) and Semantic
 Versioning. The Steam Workshop change note for each release is generated from the
 matching section below by `release.sh`.
 
+## [1.0.3] - 2026-07-17
+
+Crash fix. Restores stability for games with commanders, settlers, or many
+independent powers (city-states) on the map.
+
+### Fixed
+- The grant no longer tags non-explorer units. Previous versions tagged every
+  unit in the game with `UNIT_CLASS_AUTOEXPLORE`, including Settlers, Migrants,
+  Merchants, Army/Fleet Commanders, and aircraft. The base game's auto-explore
+  pathing AI cannot drive those unit types and dereferences a null pointer while
+  processing their moves, hard-crashing the game (a deterministic segfault that
+  surfaced mid-AI-turn, most often several turns in and worst with high
+  city-state counts). The grant is now scoped to the explore-capable formation
+  classes only — recon, land-combat, and naval — so every military and scouting
+  unit still auto-explores while the crash-prone units are left alone.
+
+### Changed
+- The grant now selects from `Units` filtered by `FormationClass`
+  (`RECON`, `LAND_COMBAT`, `NAVAL`) with a `FoundCity = 0` guard, instead of
+  tagging the entire `KIND_UNIT` set from `Types`.
+- `scripts/validate-sql.mjs` updated to lock in the new safe contract and to
+  actively reject re-adding the civilian/command/air formation classes.
+
 ## [1.0.2] - 2026-07-06
 
 Developer tooling and quality-gate release. **No gameplay changes** — the shipped

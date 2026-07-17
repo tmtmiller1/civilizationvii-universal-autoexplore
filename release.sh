@@ -73,7 +73,7 @@ echo "==> Mirroring $SRC_DIR/ → $TARGET_DIR/ (excluding dev/release-only files
 rsync -a \
     --exclude='.git' --exclude='.gitignore' --exclude='.DS_Store' --exclude='dist' \
     --exclude='release.sh' --exclude='steam_workshop_id.txt' --exclude='docs' \
-    --exclude='images' --exclude='scripts' --exclude='*.bak' \
+    --exclude='images' --exclude='scripts' --exclude='reports' --exclude='*.bak' \
     --exclude='CONTRIBUTING.md' --exclude='README.pdf' \
     --exclude='package.json' --exclude='package-lock.json' \
     --exclude='node_modules' --exclude='eslint.config.*' \
