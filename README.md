@@ -1,23 +1,22 @@
 # Universal Auto Explore for Civilization VII
 
-Grants the game's built-in auto-explore action to **every** unit, so any unit —
-not just Scouts — can be sent off to reveal the map on its own. It does not change
+Grants the game's built-in auto-explore action to **every** unit, so any unit,
+not just Scouts, can be sent off to reveal the map on its own. It does not change
 gameplay balance.
 
 ## At a glance (for players)
 
 The "explore" command Civilization VII only gives your Scouts, unlocked on
-everything else — Warriors, Settlers, Commanders, siege, ships, unique units, and
+everything else: Warriors, Settlers, Commanders, siege, ships, unique units, and
 great people.
 
-- **One thing, done completely:** any unit can be told to auto-explore and fill in
-  the fog on its own.
-- **No new UI:** it unlocks a command the game already has. If you can auto-explore
-  a Scout, you can use this.
-- **Covers everything:** base game, all DLC, independent-power units, captured
-  units, and future patch units — automatically.
-- **Safe and additive:** it does not touch balance, movement, combat, costs, or
-  base-game files, and is safe to add to an ongoing game/save.
+- Any unit can be told to auto-explore and fill in the fog on its own.
+- It unlocks a command the game already has, so there's no new UI. If you can
+  auto-explore a Scout, you can use this.
+- Coverage includes base game, all DLC, independent-power units, captured units,
+  and future patch units, automatically.
+- It does not touch balance, movement, combat, costs, or base-game files, and is
+  safe to add to an ongoing game or save.
 
 At a glance (for modders):
 
@@ -47,7 +46,7 @@ WHERE  Kind = 'KIND_UNIT'
 
 Why this shape:
 
-- **Complete, zero-maintenance coverage.** It tags whatever `KIND_UNIT` types
+- **Low-maintenance coverage.** It tags whatever `KIND_UNIT` types
   exist in the current age's database — base game, every DLC civ/leader pack,
   independent-power units, units a player captures, and any units a future patch
   adds. Nothing to update per release.
@@ -62,7 +61,7 @@ Why this shape:
   `UNIT_AUDIO_SANDBOX_*`), which never appear in normal play.
 
 `UNIT_CLASS_AUTOEXPLORE`, the `Types`/`TypeTags` table names, `KIND_UNIT`, and
-`AGE_*` are engine-owned identifiers and are left unchanged — renaming them would
+`AGE_*` are engine-owned identifiers and are left unchanged. Renaming them would
 break the effect. Everything author-owned (mod id, filename, action-group id,
 localization tags, author) was renamed for this rebuild; no attribution to the
 original creator remains.
