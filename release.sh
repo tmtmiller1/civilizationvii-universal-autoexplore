@@ -7,8 +7,9 @@
 #         dist/workshop_item.vdf                   (steamcmd build manifest)
 #         dist/preview.png                         (rendered from docs/workshop-preview.svg)
 #
-# This is a DATA-ONLY mod (one SQL patch + localized text), so there is no build,
-# no JS, and no test suite to run — the script just mirrors, audits, and packages.
+# This is a DATA-ONLY mod (one SQL patch + localized text), so there is no build step.
+# The quality gate is correspondingly small: lint plus the SQL validator, run through
+# `npm run release:gate` like every other tower mod. Then it mirrors, audits and packages.
 # It never uploads: it prints the steamcmd command for you to run with your login.
 
 set -euo pipefail
@@ -44,6 +45,15 @@ case "$AUTHORS" in
         exit 1 ;;
 esac
 
+# ── Quality gate ───────────────────────────────────────────────────────────
+# Never package a red build. `release:gate` runs lint plus the SQL validator.
+# Set SKIP_VERIFY=1 to bypass (e.g. an emergency hotfix where the gate is knowingly red).
+if [ "${SKIP_VERIFY:-0}" != "1" ] && [ -f "$SRC_DIR/package.json" ]; then
+    echo "release: running 'npm run release:gate' (set SKIP_VERIFY=1 to skip)..."
+    ( cd "$SRC_DIR" && npm run release:gate ) \
+        || { echo "release: 'npm run release:gate' FAILED — aborting."; exit 1; }
+fi
+
 # ── Workshop published file id (persisted outside dist/, survives rm -rf) ──
 WORKSHOP_ID_FILE="$SRC_DIR/steam_workshop_id.txt"
 PUBLISHED_FILE_ID="${WORKSHOP_PUBLISHED_FILE_ID:-}"
@@ -71,7 +81,7 @@ mkdir -p "$TARGET_DIR"
 
 echo "==> Mirroring $SRC_DIR/ → $TARGET_DIR/ (excluding dev/release-only files)"
 rsync -a \
-    --exclude='.git' --exclude='.gitignore' --exclude='.DS_Store' --exclude='dist' \
+    --exclude='CHANGELOG.steam.txt' --exclude='.git' --exclude='.gitignore' --exclude='.DS_Store' --exclude='dist' \
     --exclude='release.sh' --exclude='steam_workshop_id.txt' --exclude='docs' \
     --exclude='images' --exclude='scripts' --exclude='reports' --exclude='*.bak' \
     --exclude='CONTRIBUTING.md' --exclude='README.pdf' \
@@ -132,27 +142,13 @@ fi
 VDF_PATH="$DIST_DIR/workshop_item.vdf"
 ABS_CONTENT="$(cd "$TARGET_DIR" && pwd)"
 
-# Change note: "Initial release." until an item exists; then pull the current
-# version's bullets out of CHANGELOG.md and render them as a Steam BBCode list.
-CHANGELOG_FILE="$SRC_DIR/CHANGELOG.md"
+# Change note: this release's block from CHANGELOG.steam.txt, which scripts/steam-changelog.mjs keeps in step with
+# CHANGELOG.md (that script documents Steam's change-note formatting rules). The block is VDF-safe: no straight
+# double quotes, no backslashes. Edit CHANGELOG.steam.txt to reword a note; a hand-edited block is kept.
 CHANGENOTE="Initial release."
-VERSION_RE="$(printf '%s' "$VERSION" | sed -E 's/[][(){}.^$*+?|\\]/\\&/g')"
-if [ -n "$PUBLISHED_FILE_ID" ] && [ -f "$CHANGELOG_FILE" ]; then
-    BULLETS="$(awk -v verre="$VERSION_RE" '
-        function flush() { if (cur != "") { print cur; cur = "" } }
-        $0 ~ ("^## \\[" verre "\\]") { grab = 1; next }
-        grab && /^## / { flush(); exit }
-        !grab { next }
-        /^###/ { next }
-        /^[[:space:]]*[-*][[:space:]]+/ { flush(); line=$0; sub(/^[[:space:]]*[-*][[:space:]]+/,"",line); cur=line; next }
-        /^[[:space:]]*$/ { next }
-        cur != "" { line=$0; sub(/^[[:space:]]+/,"",line); cur=cur " " line }
-        END { flush() }
-    ' "$CHANGELOG_FILE" | sed -E 's/^/[*]/; s/\*\*//g; s/`//g' | tr '\n' ' ')"
-    if [ -n "$BULLETS" ]; then
-        CHANGENOTE="$(printf '[b]v%s[/b] [list]%s[/list]' "$VERSION" "$BULLETS" \
-            | sed -E 's/\\/\\\\/g; s/"/\\"/g')"
-    fi
+if [ -n "$PUBLISHED_FILE_ID" ]; then
+    CHANGENOTE="$(node scripts/steam-changelog.mjs note "$VERSION")" \
+        || { echo "error: could not build the Steam change note (see above)"; exit 1; }
 fi
 
 {
@@ -161,7 +157,8 @@ fi
     echo "    \"appid\"          \"$APPID\""
     [ -n "$PUBLISHED_FILE_ID" ] && echo "    \"publishedfileid\" \"$PUBLISHED_FILE_ID\""
     echo "    \"contentfolder\"  \"$ABS_CONTENT\""
-    [ -n "$ABS_PREVIEW" ] && echo "    \"previewfile\"    \"$ABS_PREVIEW\""
+    # "previewfile" is intentionally omitted: Steam rejects a preview image sent through steamcmd and the upload
+    # fails. Set the image by hand on the Workshop page (dist/preview.png is still rendered for that).
     echo '    "visibility"     "0"'
     echo "    \"title\"          \"$TITLE\""
     # "description" is intentionally omitted so steamcmd preserves the description
