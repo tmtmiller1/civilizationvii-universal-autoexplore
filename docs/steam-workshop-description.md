@@ -50,6 +50,8 @@ It exists for two reasons. Earlier auto-explore mods were not updated for 1.4.1,
 
 [b]Source:[/b] https://github.com/tmtmiller1/civilizationvii-universal-autoexplore
 
+[b]For modders:[/b] This mod is developed with [url=https://github.com/tmtmiller1/civilizationvii_tower-bench]Tower Bench[/url], a free, open-source test bench for Civilization VII mods. It connects to a running game from your browser or the command line: inspect and change the map with every write verified and undoable, diff the world between two turns, prove your deployed code is what the game runs, find which mod causes a crash, and see which copy of each mod is actually loaded.
+
 [b]Credits:[/b]
 [list]
 [*]Tower — Civilization VII implementation.
