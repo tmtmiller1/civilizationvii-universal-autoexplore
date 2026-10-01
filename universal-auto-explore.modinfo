@@ -7,7 +7,7 @@
 		<Package>UniversalAutoExplore</Package>
 		<PackageSortIndex>1000</PackageSortIndex>
 		<ShowInBrowser>1</ShowInBrowser>
-		<Version>1.0.3</Version>
+		<Version>1.1.0</Version>
 	</Properties>
 	<Dependencies>
 		<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
@@ -20,13 +20,46 @@
 		</Criteria>
 	</ActionCriteria>
 	<ActionGroups>
+		<!-- Shell scope: the mod's name and description in the Additional Content browser, which runs before any game
+		     is loaded. Each translation loads only when the game is in that language. -->
+		<ActionGroup id="universal-auto-explore-shell" scope="shell" criteria="always">
+			<Actions>
+				<UpdateText>
+					<Item>text/en_us/ModuleText.xml</Item>
+					<Item locale="de_DE">text/de_de/ModuleText.xml</Item>
+					<Item locale="es_ES">text/es_es/ModuleText.xml</Item>
+					<Item locale="fr_FR">text/fr_fr/ModuleText.xml</Item>
+					<Item locale="it_IT">text/it_it/ModuleText.xml</Item>
+					<Item locale="ja_JP">text/ja_jp/ModuleText.xml</Item>
+					<Item locale="ko_KR">text/ko_kr/ModuleText.xml</Item>
+					<Item locale="pl_PL">text/pl_pl/ModuleText.xml</Item>
+					<Item locale="pt_BR">text/pt_br/ModuleText.xml</Item>
+					<Item locale="ru_RU">text/ru_ru/ModuleText.xml</Item>
+					<Item locale="zh_Hans_CN">text/zh_cn/ModuleText.xml</Item>
+				</UpdateText>
+			</Actions>
+		</ActionGroup>
 		<!-- High LoadOrder so this runs after every unit type (base, age, and DLC)
 		     has been inserted into the current age's database. -->
 		<ActionGroup id="universal-auto-explore-grant" scope="game" criteria="always">
 			<Actions>
 				<UpdateDatabase>
 					<Item>data/grant-autoexplore.sql</Item>
+					<Item>data/uae-civilopedia.xml</Item>
 				</UpdateDatabase>
+				<UpdateText>
+					<Item>text/en_us/ModuleText.xml</Item>
+					<Item locale="de_DE">text/de_de/ModuleText.xml</Item>
+					<Item locale="es_ES">text/es_es/ModuleText.xml</Item>
+					<Item locale="fr_FR">text/fr_fr/ModuleText.xml</Item>
+					<Item locale="it_IT">text/it_it/ModuleText.xml</Item>
+					<Item locale="ja_JP">text/ja_jp/ModuleText.xml</Item>
+					<Item locale="ko_KR">text/ko_kr/ModuleText.xml</Item>
+					<Item locale="pl_PL">text/pl_pl/ModuleText.xml</Item>
+					<Item locale="pt_BR">text/pt_br/ModuleText.xml</Item>
+					<Item locale="ru_RU">text/ru_ru/ModuleText.xml</Item>
+					<Item locale="zh_Hans_CN">text/zh_cn/ModuleText.xml</Item>
+				</UpdateText>
 			</Actions>
 			<Properties>
 				<LoadOrder>9999</LoadOrder>

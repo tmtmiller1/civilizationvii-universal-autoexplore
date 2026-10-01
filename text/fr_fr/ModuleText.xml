@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME" Language="fr_FR"><Text>Exploration automatique universelle</Text></Replace>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="fr_FR"><Text>Donne l'action Exploration automatique à toutes les unités militaires terrestres et navales, pas seulement aux Éclaireurs, afin que chacune puisse partir révéler la carte d'elle-même. Couvre les unités du jeu de base, des DLC et des Puissances indépendantes, ainsi que celles ajoutées par les mises à jour futures. Les unités civiles, les Commandants et les avions gardent leurs actions habituelles. Peut être ajouté à une partie en cours.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE" Language="fr_FR"><Text>Exploration automatique</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_1" Language="fr_FR"><Text>Toutes les unités militaires terrestres et navales peuvent utiliser l'action [B]Exploration automatique[/B], pas seulement les Éclaireurs. Une unité en exploration avance seule à chaque tour vers un territoire que vous n'avez pas encore vu.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_2" Language="fr_FR"><Text>Elle cesse son exploration en cas de découverte à proximité, ou si elle entre dans la zone de contrôle d'une unité ennemie.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="fr_FR"><Text>Unités concernées</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="fr_FR"><Text>[BLIST][LI]Unités militaires terrestres : infanterie, à distance, cavalerie et siège.[LI]Unités navales.[LI]Unités exclusives, y compris celles des DLC.[/LIST]</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="fr_FR"><Text>Non concernées</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="fr_FR"><Text>Les Colons, Migrants, Marchands et autres unités civiles n'obtiennent pas l'action, pas plus que les Commandants et les avions. Les Éclaireurs et toute autre unité qui l'ont déjà la conservent.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="fr_FR"><Text>Utilisation</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="fr_FR"><Text>Sélectionnez une unité et choisissez [B]Exploration automatique[/B] parmi ses actions. Si elle n'est pas disponible, déplacez l'unité en territoire plus sûr et réessayez.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="fr_FR"><Text>Exploration</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="fr_FR"><Text>Éclaireur</Text></Replace>
+    </LocalizedText>
+</Database>

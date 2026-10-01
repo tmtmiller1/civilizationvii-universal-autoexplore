@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME" Language="ru_RU"><Text>Универсальное автоисследование</Text></Replace>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="ru_RU"><Text>Даёт действие «Автоматическое исследование» всем военным юнитам на суше и на море, а не только разведчикам, чтобы любой из них можно было отправить самостоятельно открывать карту. Охватывает юниты основной игры, DLC и независимых сил, а также юниты из будущих обновлений. Гражданские юниты, командиры и самолёты сохраняют свои обычные действия. Мод можно добавить в уже начатую игру.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE" Language="ru_RU"><Text>Автоисследование</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_1" Language="ru_RU"><Text>Действие «[B]Автоматическое исследование[/B]» доступно всем военным юнитам на суше и на море, а не только разведчикам. Исследующий юнит каждый ход сам продвигается на территорию, которую вы ещё не видели.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_2" Language="ru_RU"><Text>Он прекращает исследование, если поблизости есть открытие или он попадает в зону контроля вражеского юнита.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="ru_RU"><Text>Какие юниты</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="ru_RU"><Text>[BLIST][LI]Сухопутные военные юниты: пехота, дальнобойные, кавалерия и осадные.[LI]Морские юниты.[LI]Уникальные юниты, в том числе из DLC.[/LIST]</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="ru_RU"><Text>Исключения</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="ru_RU"><Text>Поселенцы, мигранты, торговцы и другие гражданские юниты не получают это действие, как и командиры и самолёты. Разведчики и другие юниты, у которых оно уже есть, сохраняют его.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="ru_RU"><Text>Как использовать</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="ru_RU"><Text>Выделите юнит и выберите в его действиях «[B]Автоматическое исследование[/B]». Если действие недоступно, переместите юнит в более безопасное место и попробуйте снова.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="ru_RU"><Text>Исследование</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="ru_RU"><Text>Разведчик</Text></Replace>
+    </LocalizedText>
+</Database>

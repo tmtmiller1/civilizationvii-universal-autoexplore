@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME" Language="ja_JP"><Text>ユニバーサル自動探索</Text></Replace>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="ja_JP"><Text>斥候だけでなく、陸上と海上のすべての軍事ユニットに「探索を自動化」アクションを与え、どのユニットでも自動でマップを探索させられるようにします。基本ゲーム、DLC、独立勢力のユニットに加え、今後のアップデートで追加されるユニットにも対応します。民間人ユニット、司令官、航空機は通常のアクションのままです。進行中のゲームにも追加できます。</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE" Language="ja_JP"><Text>探索を自動化</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_1" Language="ja_JP"><Text>斥候だけでなく、陸上と海上のすべての軍事ユニットが「[B]探索を自動化[/B]」アクションを使えます。探索中のユニットは毎ターン自動で移動し、まだ見ていない地域へ進みます。</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_2" Language="ja_JP"><Text>付近に発見があるか、敵ユニットの支配領域に入ると探索を中止します。</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="ja_JP"><Text>対象ユニット</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="ja_JP"><Text>[BLIST][LI]陸上の軍事ユニット: 歩兵、遠隔、騎兵、攻城。[LI]海洋ユニット。[LI]DLCのものを含む固有ユニット。[/LIST]</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="ja_JP"><Text>対象外</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="ja_JP"><Text>開拓者、移住者、商人などの民間人ユニット、司令官、航空機はこのアクションを得ません。斥候など、すでにこのアクションを持つユニットはそのまま使えます。</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="ja_JP"><Text>使い方</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="ja_JP"><Text>ユニットを選択し、アクションから「[B]探索を自動化[/B]」を選びます。利用できない場合は、ユニットを安全性の高い場所へ移動してから再度試してください。</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="ja_JP"><Text>探索</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="ja_JP"><Text>斥候</Text></Replace>
+    </LocalizedText>
+</Database>

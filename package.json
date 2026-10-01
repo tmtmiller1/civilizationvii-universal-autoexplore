@@ -1,13 +1,14 @@
 {
   "name": "universal-auto-explore",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "lint": "npx --yes eslint \"ui/**/*.js\" --no-error-on-unmatched-pattern",
     "test:sql": "node ./scripts/validate-sql.mjs",
-    "check": "npm run test:sql",
+    "check": "npm run test:sql && npm run test",
     "verify": "npm run lint && npm run check",
-    "release:gate": "npm run verify"
+    "release:gate": "npm run verify",
+    "test": "node --test tests/*.test.mjs"
   }
 }

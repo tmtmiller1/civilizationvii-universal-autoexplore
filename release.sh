@@ -7,7 +7,7 @@
 #         dist/workshop_item.vdf                   (steamcmd build manifest)
 #         dist/preview.png                         (rendered from docs/workshop-preview.svg)
 #
-# This is a DATA-ONLY mod (one SQL patch + localized text), so there is no build step.
+# This is a DATA-ONLY mod (one SQL patch, one Civilopedia page + localized text), so there is no build step.
 # The quality gate is correspondingly small: lint plus the SQL validator, run through
 # `npm run release:gate` like every other tower mod. Then it mirrors, audits and packages.
 # It never uploads: it prints the steamcmd command for you to run with your login.
@@ -84,7 +84,7 @@ rsync -a \
     --exclude='CHANGELOG.steam.txt' --exclude='.git' --exclude='.gitignore' --exclude='.DS_Store' --exclude='dist' \
     --exclude='release.sh' --exclude='steam_workshop_id.txt' --exclude='docs' \
     --exclude='images' --exclude='scripts' --exclude='reports' --exclude='*.bak' \
-    --exclude='CONTRIBUTING.md' --exclude='README.pdf' \
+    --exclude='CONTRIBUTING.md' --exclude='README.pdf' --exclude='tests' --exclude='text/README.md' \
     --exclude='package.json' --exclude='package-lock.json' \
     --exclude='node_modules' --exclude='eslint.config.*' \
     "$SRC_DIR"/ "$TARGET_DIR"/

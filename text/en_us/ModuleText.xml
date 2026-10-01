@@ -5,7 +5,42 @@
             <Text>Universal Auto Explore</Text>
         </Row>
         <Row Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION">
-            <Text>Turns every unit into an explorer: grants the auto-explore action to all units, so any unit can be sent off to reveal the map automatically. Covers all base-game, DLC, and independent units. Updated for game version 1.4.1.</Text>
+            <Text>Gives the Automate Exploration action to every military unit on land and at sea, not just Scouts, so any of them can be sent off to reveal the map on its own. Covers base-game, DLC and Independent Powers units, and units added by later updates. Civilian units, Commanders and aircraft keep their usual actions. Safe to add to a game in progress.</Text>
+        </Row>
+
+        <!-- Civilopedia: Game Concepts > Combat > Automate Exploration (data/uae-civilopedia.xml) -->
+        <Row Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE">
+            <Text>Automate Exploration</Text>
+        </Row>
+        <Row Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_1">
+            <Text>Every military unit on land and at sea can use the [B]Automate Exploration[/B] action, not just Scouts. A unit set to explore moves on its own each turn into territory you have not seen yet.</Text>
+        </Row>
+        <Row Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_2">
+            <Text>It stops exploring when a Discovery is nearby or when it moves into the Zone of Control of an enemy unit.</Text>
+        </Row>
+        <Row Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE">
+            <Text>Which Units</Text>
+        </Row>
+        <Row Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1">
+            <Text>[BLIST][LI]Land military units: infantry, ranged, cavalry and siege.[LI]Naval units.[LI]Unique Units, including those from DLC.[/LIST]</Text>
+        </Row>
+        <Row Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE">
+            <Text>Not Included</Text>
+        </Row>
+        <Row Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1">
+            <Text>Settlers, Migrants, Merchants and other civilian units do not gain the action, and neither do Commanders or aircraft. Scouts and any other unit that already has it keep it.</Text>
+        </Row>
+        <Row Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE">
+            <Text>How to Use</Text>
+        </Row>
+        <Row Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1">
+            <Text>Select a unit and choose [B]Automate Exploration[/B] from its actions. If it is not available, move the unit to safer ground and try again.</Text>
+        </Row>
+        <Row Tag="LOC_PEDIA_UAE_TERM_EXPLORATION">
+            <Text>Exploration</Text>
+        </Row>
+        <Row Tag="LOC_PEDIA_UAE_TERM_SCOUT">
+            <Text>Scout</Text>
         </Row>
     </EnglishText>
 </Database>

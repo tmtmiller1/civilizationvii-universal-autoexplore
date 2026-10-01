@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME" Language="es_ES"><Text>Exploración automática universal</Text></Replace>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="es_ES"><Text>Otorga la acción Exploración automática a todas las unidades militares de tierra y mar, no solo a los Batidores, para que cualquiera de ellas pueda salir a descubrir el mapa por su cuenta. Abarca las unidades del juego base, de los DLC y de las Potencias independientes, así como las que añadan futuras actualizaciones. Las unidades civiles, los Comandantes y las aeronaves conservan sus acciones habituales. Se puede añadir a una partida en curso.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE" Language="es_ES"><Text>Exploración automática</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_1" Language="es_ES"><Text>Todas las unidades militares de tierra y mar pueden usar la acción [B]Exploración automática[/B], no solo los Batidores. Una unidad que explora avanza por su cuenta cada turno hacia territorio que aún no has visto.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_2" Language="es_ES"><Text>Deja de explorar si cerca hay algún descubrimiento o si entra en la Zona de control de alguna unidad enemiga.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="es_ES"><Text>Qué unidades</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="es_ES"><Text>[BLIST][LI]Unidades militares terrestres: infantería, a distancia, caballería y asedio.[LI]Unidades navales.[LI]Unidades exclusivas, incluidas las de los DLC.[/LIST]</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="es_ES"><Text>Excluidas</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="es_ES"><Text>Los Colonos, Emigrantes, Mercaderes y demás unidades civiles no obtienen la acción, ni tampoco los Comandantes ni las aeronaves. Los Batidores y cualquier otra unidad que ya la tenga la conservan.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="es_ES"><Text>Cómo usarla</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="es_ES"><Text>Selecciona una unidad y elige [B]Exploración automática[/B] entre sus acciones. Si no está disponible, desplaza la unidad a un territorio más seguro y vuelve a intentarlo.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="es_ES"><Text>Exploración</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="es_ES"><Text>Batidor</Text></Replace>
+    </LocalizedText>
+</Database>

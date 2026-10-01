@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Civilopedia: one page, "Automate Exploration", in the base game's Game Concepts section, under Combat beside
+  "Unit Types" (SortIndex 270). Chapter text resolves by key convention (base-standard model-civilopedia.js):
+  LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_<chapter>_TITLE and ..._PARA_1, _PARA_2, ... until the first gap;
+  the text is in text/<lang>/ModuleText.xml. The layout comes first: the page and its chapters have a foreign key
+  onto it.
+-->
+<Database>
+    <CivilopediaPageLayouts>
+        <Row PageLayoutID="UAE_AUTOEXPLORE" UseSidebar="false"/>
+    </CivilopediaPageLayouts>
+
+    <CivilopediaPageLayoutChapters>
+        <Row PageLayoutID="UAE_AUTOEXPLORE" ChapterID="CONTENT" SortIndex="10"/>
+        <Row PageLayoutID="UAE_AUTOEXPLORE" ChapterID="UNITS" SortIndex="20"/>
+        <Row PageLayoutID="UAE_AUTOEXPLORE" ChapterID="EXCLUDED" SortIndex="30"/>
+        <Row PageLayoutID="UAE_AUTOEXPLORE" ChapterID="USE" SortIndex="40"/>
+    </CivilopediaPageLayoutChapters>
+
+    <CivilopediaPages>
+        <Row SectionID="CONCEPTS" PageID="UAE_AUTOEXPLORE" PageGroupID="COMBAT" PageLayoutID="UAE_AUTOEXPLORE" Name="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE" SortIndex="275"/>
+    </CivilopediaPages>
+
+    <CivilopediaPageSearchTerms>
+        <Row SectionID="CONCEPTS" PageID="UAE_AUTOEXPLORE" Term="LOC_PEDIA_UAE_TERM_EXPLORATION"/>
+        <Row SectionID="CONCEPTS" PageID="UAE_AUTOEXPLORE" Term="LOC_PEDIA_UAE_TERM_SCOUT"/>
+    </CivilopediaPageSearchTerms>
+</Database>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME" Language="pl_PL"><Text>Uniwersalna automatyczna eksploracja</Text></Replace>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="pl_PL"><Text>Daje akcję Automatyczna eksploracja każdej jednostce wojskowej na lądzie i na morzu, nie tylko Zwiadowcom, więc każdą z nich można wysłać, by sama odkrywała mapę. Obejmuje jednostki z gry podstawowej, z DLC i Niezależnych sił, a także jednostki dodane w przyszłych aktualizacjach. Jednostki cywilne, Dowódcy i samoloty zachowują swoje zwykłe akcje. Mod można dodać do trwającej rozgrywki.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE" Language="pl_PL"><Text>Automatyczna eksploracja</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_1" Language="pl_PL"><Text>Każda jednostka wojskowa na lądzie i na morzu może użyć akcji [B]Automatyczna eksploracja[/B], nie tylko Zwiadowcy. Jednostka w trakcie eksploracji co turę sama przemieszcza się na terytorium, którego jeszcze nie widziałeś.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_2" Language="pl_PL"><Text>Przerywa eksplorację, jeśli znajdzie się w pobliżu odkrycia lub w strefie kontroli jednostki wroga.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="pl_PL"><Text>Które jednostki</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="pl_PL"><Text>[BLIST][LI]Lądowe jednostki wojskowe: piechota, jednostki dystansowe, kawaleria i jednostki oblężnicze.[LI]Jednostki pływające.[LI]Unikalne jednostki, także z DLC.[/LIST]</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="pl_PL"><Text>Wyłączone</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="pl_PL"><Text>Osadnicy, migranci, kupcy i inne jednostki cywilne nie otrzymują tej akcji, podobnie jak dowódcy i samoloty. Zwiadowcy i każda inna jednostka, która już ją ma, zachowują ją.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="pl_PL"><Text>Jak używać</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="pl_PL"><Text>Zaznacz jednostkę i wybierz [B]Automatyczna eksploracja[/B] z jej akcji. Jeśli akcja jest niedostępna, przejdź jednostką na bezpieczniejszy obszar i spróbuj ponownie.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="pl_PL"><Text>Eksploracja</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="pl_PL"><Text>Zwiadowca</Text></Replace>
+    </LocalizedText>
+</Database>

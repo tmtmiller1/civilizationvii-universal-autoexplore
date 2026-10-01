@@ -1,20 +1,24 @@
 # Universal Auto Explore for Civilization VII
 
-Grants the game's built-in auto-explore action to **every** unit, so any unit,
-not just Scouts, can be sent off to reveal the map on its own. It does not change
-gameplay balance.
+Grants the game's built-in **Automate Exploration** action to every military
+unit on land and at sea, not just Scouts, so any of them can be sent off to
+reveal the map on its own. It does not change gameplay balance.
 
 ## At a glance (for players)
 
-The "explore" command Civilization VII only gives your Scouts, unlocked on
-everything else: Warriors, Settlers, Commanders, siege, ships, unique units, and
-great people.
+The Automate Exploration command Civilization VII gives your Scouts and some
+ships, unlocked on every land and naval military unit: infantry, ranged,
+cavalry, siege, every ship, and unique units.
 
-- Any unit can be told to auto-explore and fill in the fog on its own.
+- Any of these units can be told to explore and fill in the fog on its own.
+- Settlers, Migrants, Merchants and other civilians, Commanders, and aircraft
+  do not get it. Scouts keep it as before.
 - It unlocks a command the game already has, so there's no new UI. If you can
   auto-explore a Scout, you can use this.
-- Coverage includes base game, all DLC, independent-power units, captured units,
-  and future patch units, automatically.
+- Coverage includes base game, all DLC, independent-power units, and units
+  added by future patches, automatically.
+- A Civilopedia page, **Automate Exploration** (Game Concepts, under Combat),
+  lists which units can explore and how to use the action.
 - It does not touch balance, movement, combat, costs, or base-game files, and is
   safe to add to an ongoing game or save.
 
@@ -22,7 +26,7 @@ At a glance (for modders):
 
 - **Mod id:** `universal-auto-explore`
 - **Author:** Tower
-- **Version:** 1.0.1
+- **Version:** 1.1.0
 - **Requires:** `base-standard` (i.e. the base game). No DLC required.
 
 ---
@@ -31,25 +35,34 @@ At a glance (for modders):
 
 The game enables auto-explore on units carrying the `UNIT_CLASS_AUTOEXPLORE`
 type tag (by default only Scouts, a handful of uniques, and most warships have
-it). This mod adds that tag to every other unit.
+it). This mod adds that tag to every land combat, recon and naval unit.
 
 Instead of hand-listing hundreds of unit types, it applies the tag with a single
 set-based SQL patch — [data/grant-autoexplore.sql](data/grant-autoexplore.sql):
 
 ```sql
 INSERT OR IGNORE INTO TypeTags (Type, Tag)
-SELECT Type, 'UNIT_CLASS_AUTOEXPLORE'
-FROM   Types
-WHERE  Kind = 'KIND_UNIT'
-  AND  Type NOT LIKE '%SANDBOX%';
+SELECT u.UnitType, 'UNIT_CLASS_AUTOEXPLORE'
+FROM   Units u
+WHERE  u.FormationClass IN (
+           'FORMATION_CLASS_RECON',
+           'FORMATION_CLASS_LAND_COMBAT',
+           'FORMATION_CLASS_NAVAL'
+       )
+  AND  u.FoundCity = 0
+  AND  u.UnitType NOT LIKE '%SANDBOX%';
 ```
 
 Why this shape:
 
-- **Low-maintenance coverage.** It tags whatever `KIND_UNIT` types
-  exist in the current age's database — base game, every DLC civ/leader pack,
-  independent-power units, units a player captures, and any units a future patch
-  adds. Nothing to update per release.
+- **Low-maintenance coverage.** It tags whatever units of those formation
+  classes exist in the current age's database: base game, every DLC civ/leader
+  pack, independent-power units, and any units a future patch adds. Nothing to
+  update per release.
+- **Scoped to units the explore AI can drive.** The game's explore pathing only
+  handles recon, land combat and naval units. Civilians, Commanders and aircraft
+  crash it, so their formation classes stay out, and `FoundCity = 0` keeps
+  city-founders out as well. `scripts/validate-sql.mjs` fails if they come back.
 - **`INSERT OR IGNORE`** skips units that already carry the tag (they collide on
   the `TypeTags (Tag, Type)` primary key), so there is no duplicate-row load
   error and no need to maintain an exclusion list.
@@ -60,7 +73,8 @@ Why this shape:
 - **`SANDBOX` filter** drops the engine test units (`UNIT_SANDBOX`,
   `UNIT_AUDIO_SANDBOX_*`), which never appear in normal play.
 
-`UNIT_CLASS_AUTOEXPLORE`, the `Types`/`TypeTags` table names, `KIND_UNIT`, and
+`UNIT_CLASS_AUTOEXPLORE`, the `Units`/`TypeTags` table names, the
+`FORMATION_CLASS_*` values, and
 `AGE_*` are engine-owned identifiers and are left unchanged. Renaming them would
 break the effect. Everything author-owned (mod id, filename, action-group id,
 localization tags, author) was renamed for this rebuild; no attribution to the
@@ -72,7 +86,10 @@ original creator remains.
 universal_auto-explore/
   universal-auto-explore.modinfo   # mod manifest
   data/grant-autoexplore.sql       # the single set-based tag patch
-  text/en_us/ModuleText.xml        # display name + description
+  data/uae-civilopedia.xml         # Civilopedia page: Game Concepts > Combat > Automate Exploration
+  text/en_us/ModuleText.xml        # name, description and Civilopedia text (source of truth)
+  text/<lang>/ModuleText.xml       # the ten translations; text/README.md explains them
+  tests/                           # translation and Civilopedia page checks (npm run verify)
   README.md  README.pdf            # this document
   CHANGELOG.md                     # release history (drives the Steam change note)
   CONTRIBUTING.md  LICENSE         # contributor guide + MIT license
@@ -94,6 +111,15 @@ repo-only (excluded by `release.sh`).
 
 Everything below `data/`, `text/`, plus the modinfo and README is what ships; the
 rest is release tooling and is excluded from the packaged zip.
+
+## Translations
+
+The mod's name, description and Civilopedia page ship in English and the game's ten other
+languages: German, Spanish, French, Italian, Japanese, Korean, Polish,
+Portuguese (Brazil), Russian and Simplified Chinese. They are machine
+translations that use the game's own words for its terms, such as the
+Automate Exploration action; corrections from native speakers are welcome. To
+fix or add a language, see [`text/README.md`](text/README.md).
 
 ## Publishing to Steam Workshop
 

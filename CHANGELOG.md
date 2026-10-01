@@ -5,6 +5,25 @@ Loosely follows [Keep a Changelog](https://keepachangelog.com/) and Semantic
 Versioning. The Steam Workshop change note for each release is generated from the
 matching section below by `release.sh`.
 
+## [1.1.0] - 2026-10-01
+
+A Civilopedia page and ten translations.
+
+### Added
+- A Civilopedia page, **Automate Exploration**, under Game Concepts > Combat: which
+  units can explore automatically, which are left out, and how to use the action.
+- The mod's name, description and Civilopedia page in ten languages besides
+  English: German, Spanish, French, Italian, Japanese, Korean, Polish,
+  Portuguese (Brazil), Russian and Simplified Chinese, machine-translated with
+  the game's own terms.
+  `text/README.md` explains how to correct or add one.
+
+### Changed
+- The README describes the 1.0.3 unit scope and shows the current SQL.
+- The description now matches what 1.0.3 does: the Automate Exploration action
+  goes to military units on land and at sea, while civilian units, Commanders
+  and aircraft keep their usual actions. It no longer names a game version.
+
 ## [1.0.3] - 2026-07-17
 
 Crash fix. Restores stability for games with commanders, settlers, or many

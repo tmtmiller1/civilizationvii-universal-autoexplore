@@ -3,6 +3,18 @@ Generated from CHANGELOG.md by scripts/steam-changelog.mjs; release.sh uploads t
 To fix an old Workshop entry, paste the text under its ==== line into that entry's Edit box on the change-notes page.
 A block edited by hand is kept as-is. Delete a block to regenerate it from CHANGELOG.md.
 
+==== 1.1.0 | 2026-10-01 | src 57b6f790471a | gen 809ee3a5b18c ====
+[b]Version 1.1.0 · 1 October 2026[/b]
+A Civilopedia page and ten translations.
+
+[b]Added[/b]
+• A Civilopedia page, [b]Automate Exploration[/b], under Game Concepts > Combat: which units can explore automatically, which are left out, and how to use the action.
+• The mod's name, description and Civilopedia page in ten languages besides English: German, Spanish, French, Italian, Japanese, Korean, Polish, Portuguese (Brazil), Russian and Simplified Chinese, machine-translated with the game's own terms. text/README.md explains how to correct or add one.
+
+[b]Changed[/b]
+• The README describes the 1.0.3 unit scope and shows the current SQL.
+• The description now matches what 1.0.3 does: the Automate Exploration action goes to military units on land and at sea, while civilian units, Commanders and aircraft keep their usual actions. It no longer names a game version.
+
 ==== 1.0.3 | 2026-07-17 | src 5f786e43359c | gen abb0f327887a ====
 [b]Version 1.0.3 · 17 July 2026[/b]
 Crash fix. Restores stability for games with commanders, settlers, or many independent powers (city-states) on the map.

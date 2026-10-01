@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME" Language="it_IT"><Text>Esplorazione automatica universale</Text></Replace>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="it_IT"><Text>Concede l'azione Esplorazione automatica a tutte le unità militari di terra e di mare, non solo agli Scout, così che ognuna possa essere mandata a scoprire la mappa da sola. Comprende le unità del gioco base, dei DLC e delle Potenze indipendenti, oltre a quelle aggiunte dai futuri aggiornamenti. Le unità civili, i Comandanti e gli aerei mantengono le loro azioni consuete. Si può aggiungere a una partita in corso.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE" Language="it_IT"><Text>Esplorazione automatica</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_1" Language="it_IT"><Text>Tutte le unità militari di terra e di mare possono usare l'azione [B]Esplorazione automatica[/B], non solo gli Scout. Un'unità in esplorazione avanza da sola ogni turno verso territori che non hai ancora visto.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_2" Language="it_IT"><Text>Interrompe l'esplorazione quando c'è una Scoperta nelle vicinanze o se entra nella zona di controllo di un'unità nemica.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="it_IT"><Text>Quali unità</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="it_IT"><Text>[BLIST][LI]Unità militari di terra: fanteria, a distanza, cavalleria e assedio.[LI]Unità navali.[LI]Unità esclusive, comprese quelle dei DLC.[/LIST]</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="it_IT"><Text>Escluse</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="it_IT"><Text>Coloni, Migranti, Mercanti e le altre unità civili non ottengono l'azione, e nemmeno i Comandanti e gli aerei. Gli Scout e ogni altra unità che già la possiede la mantengono.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="it_IT"><Text>Come usarla</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="it_IT"><Text>Seleziona un'unità e scegli [B]Esplorazione automatica[/B] tra le sue azioni. Se non è disponibile, sposta l'unità in un territorio più sicuro e riprova.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="it_IT"><Text>Esplorazione</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="it_IT"><Text>Scout</Text></Replace>
+    </LocalizedText>
+</Database>

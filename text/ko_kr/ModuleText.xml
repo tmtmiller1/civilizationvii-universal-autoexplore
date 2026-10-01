@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME" Language="ko_KR"><Text>유니버설 자동 탐험</Text></Replace>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="ko_KR"><Text>정찰병뿐 아니라 육상과 해상의 모든 군사 유닛에 '자동 탐험' 행동을 부여하여, 어떤 유닛이든 스스로 지도를 밝히도록 보낼 수 있습니다. 기본 게임, DLC, 독립 세력의 유닛은 물론 이후 업데이트로 추가되는 유닛에도 적용됩니다. 민간 유닛, 사령관, 항공기는 기존 행동을 그대로 유지합니다. 진행 중인 게임에도 추가할 수 있습니다.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE" Language="ko_KR"><Text>자동 탐험</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_1" Language="ko_KR"><Text>정찰병뿐 아니라 육상과 해상의 모든 군사 유닛이 [B]자동 탐험[/B] 행동을 사용할 수 있습니다. 탐험 중인 유닛은 매 턴 스스로 이동하여 아직 보지 못한 지역으로 나아갑니다.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_2" Language="ko_KR"><Text>근처에 발견물이 있거나 적 유닛의 통제 지역으로 이동하면 탐험을 중지합니다.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="ko_KR"><Text>대상 유닛</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="ko_KR"><Text>[BLIST][LI]육상 군사 유닛: 보병, 원거리, 기병, 공성.[LI]해상 유닛.[LI]DLC 유닛을 포함한 특유 유닛.[/LIST]</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="ko_KR"><Text>제외 대상</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="ko_KR"><Text>개척자, 이주민, 상인 등 민간 유닛과 사령관, 항공기는 이 행동을 얻지 않습니다. 정찰병처럼 이미 이 행동이 있는 유닛은 그대로 유지합니다.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="ko_KR"><Text>사용 방법</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="ko_KR"><Text>유닛을 선택한 뒤 행동 목록에서 [B]자동 탐험[/B]을 고르세요. 사용할 수 없다면 유닛을 안전한 곳으로 옮긴 뒤 다시 시도하세요.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="ko_KR"><Text>탐험</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="ko_KR"><Text>정찰병</Text></Replace>
+    </LocalizedText>
+</Database>

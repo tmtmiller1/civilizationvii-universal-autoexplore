@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME" Language="de_DE"><Text>Universelle automatische Erkundung</Text></Replace>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="de_DE"><Text>Gibt jeder Militäreinheit an Land und auf See, nicht nur Spähern, die Aktion „Erkundung automatisieren“, sodass jede von ihnen losgeschickt werden kann, um die Karte selbstständig aufzudecken. Gilt für Einheiten aus dem Grundspiel, aus DLCs und von Unabhängigen Mächten sowie für Einheiten aus späteren Updates. Zivileinheiten, Kommandanten und Flugzeuge behalten ihre üblichen Aktionen. Kann in ein laufendes Spiel aufgenommen werden.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE" Language="de_DE"><Text>Erkundung automatisieren</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_1" Language="de_DE"><Text>Jede Militäreinheit an Land und auf See kann die Aktion [B]Erkundung automatisieren[/B] nutzen, nicht nur Späher. Eine Einheit, die erkundet, zieht jede Runde selbstständig in Gebiet, das Ihr noch nicht gesehen habt.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_2" Language="de_DE"><Text>Sie hört auf zu erkunden, wenn es eine Entdeckung in der Nähe gibt oder sie die Kontrollzone einer feindlichen Einheit betritt.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="de_DE"><Text>Welche Einheiten</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="de_DE"><Text>[BLIST][LI]Militäreinheiten an Land: Infanterie, Fernkampf, Kavallerie und Belagerung.[LI]Marineeinheiten.[LI]Spezialeinheiten, auch aus DLCs.[/LIST]</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="de_DE"><Text>Nicht enthalten</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="de_DE"><Text>Siedler, Migranten, Händler und andere Zivileinheiten erhalten die Aktion nicht, ebenso wenig Kommandanten und Flugzeuge. Späher und alle anderen Einheiten, die sie bereits haben, behalten sie.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="de_DE"><Text>Verwendung</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="de_DE"><Text>Wählt eine Einheit aus und dann [B]Erkundung automatisieren[/B] aus ihren Aktionen. Ist die Aktion nicht verfügbar, bewegt die Einheit an einen sichereren Ort und versucht es erneut.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="de_DE"><Text>Erkundung</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="de_DE"><Text>Späher</Text></Replace>
+    </LocalizedText>
+</Database>

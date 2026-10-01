@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Database>
+    <LocalizedText>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME" Language="zh_Hans_CN"><Text>通用自动探索</Text></Replace>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="zh_Hans_CN"><Text>让陆地和海上的所有军事单位（不只是探路者）都能使用“自动探索”行动，可以派出任何一个单位自行揭开地图。涵盖基础游戏、DLC 和独立势力的单位，以及今后更新加入的单位。平民单位、指挥官和飞机保留原有的行动。可以加入进行中的游戏。</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE" Language="zh_Hans_CN"><Text>自动探索</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_1" Language="zh_Hans_CN"><Text>不只是探路者，陆地和海上的所有军事单位都能使用[B]自动探索[/B]行动。探索中的单位每回合会自行移动，前往你尚未见过的领土。</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_2" Language="zh_Hans_CN"><Text>如果附近有发现，或进入敌方单位的控制区，单位将停止探索。</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="zh_Hans_CN"><Text>适用单位</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="zh_Hans_CN"><Text>[BLIST][LI]陆地军事单位：步兵、远程、骑兵和攻城单位。[LI]海上单位。[LI]特色单位，包括 DLC 中的单位。[/LIST]</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="zh_Hans_CN"><Text>不适用</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="zh_Hans_CN"><Text>开拓者、移民、商人等平民单位不会获得该行动，指挥官和飞机也不会。探路者以及其他已拥有该行动的单位会保留它。</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="zh_Hans_CN"><Text>使用方法</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="zh_Hans_CN"><Text>选中一个单位，从其行动中选择[B]自动探索[/B]。如果该行动不可用，请将单位移动到更安全之处后再试。</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="zh_Hans_CN"><Text>探索</Text></Replace>
+        <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="zh_Hans_CN"><Text>探路者</Text></Replace>
+    </LocalizedText>
+</Database>
