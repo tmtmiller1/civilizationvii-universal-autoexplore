@@ -9,10 +9,25 @@
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="de_DE"><Text>Welche Einheiten</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="de_DE"><Text>[BLIST][LI]Militäreinheiten an Land: Infanterie, Fernkampf, Kavallerie und Belagerung.[LI]Marineeinheiten.[LI]Spezialeinheiten, auch aus DLCs.[/LIST]</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="de_DE"><Text>Nicht enthalten</Text></Replace>
-        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="de_DE"><Text>Siedler, Migranten, Händler und andere Zivileinheiten erhalten die Aktion nicht, ebenso wenig Kommandanten und Flugzeuge. Späher und alle anderen Einheiten, die sie bereits haben, behalten sie.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="de_DE"><Text>Siedler, Migranten, Händler und andere Zivileinheiten sowie Kommandanten erhalten die Aktion nur, wenn Zivileinheiten unter Optionen > Add-Ons eingeschaltet ist. Flugzeuge nie. Späher und alle anderen Einheiten, die sie bereits haben, behalten sie.</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="de_DE"><Text>Verwendung</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="de_DE"><Text>Wählt eine Einheit aus und dann [B]Erkundung automatisieren[/B] aus ihren Aktionen. Ist die Aktion nicht verfügbar, bewegt die Einheit an einen sichereren Ort und versucht es erneut.</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="de_DE"><Text>Erkundung</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="de_DE"><Text>Späher</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_UNIVERSALAUTOEXPLORE" Language="de_DE"><Text>Universelle automatische Erkundung</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS" Language="de_DE"><Text>Späher</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_DESCRIPTION" Language="de_DE"><Text>Späher und andere Aufklärungseinheiten können Erkundung automatisieren nutzen. Ausschalten entfernt die Aktion aus ihrem Einheitenmenü.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_CHOOSE" Language="de_DE"><Text>Späher auswählen</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND" Language="de_DE"><Text>Militäreinheiten an Land</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_DESCRIPTION" Language="de_DE"><Text>Infanterie-, Fernkampf-, Kavallerie- und Belagerungseinheiten können Erkundung automatisieren nutzen. Ausschalten entfernt die Aktion aus ihrem Einheitenmenü.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_CHOOSE" Language="de_DE"><Text>Militäreinheiten an Land auswählen</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL" Language="de_DE"><Text>Marineeinheiten</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_DESCRIPTION" Language="de_DE"><Text>Marineeinheiten können Erkundung automatisieren nutzen. Ausschalten entfernt die Aktion aus ihrem Einheitenmenü.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_CHOOSE" Language="de_DE"><Text>Marineeinheiten auswählen</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN" Language="de_DE"><Text>Zivileinheiten</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_DESCRIPTION" Language="de_DE"><Text>Siedler, Migranten, Händler, Missionare, Große Persönlichkeiten, Kommandanten und andere Einheiten, die nicht kämpfen, können Erkundung automatisieren nutzen. Aus, bis Ihr es einschaltet.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_CHOOSE" Language="de_DE"><Text>Zivileinheiten auswählen</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CHOOSE_DESCRIPTION" Language="de_DE"><Text>Zeigt die Einheiten dieser Gruppe, um Erkundung automatisieren für jede einzeln ein- oder auszuschalten.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_UNIT_DESCRIPTION" Language="de_DE"><Text>Diese Einheit kann Erkundung automatisieren nutzen. Die Einstellung ihrer Gruppe hat Vorrang: Ist die Gruppe aus, ist es auch diese Einheit.</Text></Replace>
     </LocalizedText>
 </Database>

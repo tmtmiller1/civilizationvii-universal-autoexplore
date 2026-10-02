@@ -9,10 +9,25 @@
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="pl_PL"><Text>Które jednostki</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="pl_PL"><Text>[BLIST][LI]Lądowe jednostki wojskowe: piechota, jednostki dystansowe, kawaleria i jednostki oblężnicze.[LI]Jednostki pływające.[LI]Unikalne jednostki, także z DLC.[/LIST]</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="pl_PL"><Text>Wyłączone</Text></Replace>
-        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="pl_PL"><Text>Osadnicy, migranci, kupcy i inne jednostki cywilne nie otrzymują tej akcji, podobnie jak dowódcy i samoloty. Zwiadowcy i każda inna jednostka, która już ją ma, zachowują ją.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="pl_PL"><Text>Osadnicy, migranci, kupcy i inne jednostki cywilne oraz dowódcy otrzymują tę akcję tylko wtedy, gdy opcja Jednostki cywilne jest włączona w Ustawienia > Dodatki. Samoloty nigdy. Zwiadowcy i inne jednostki, które już ją mają, zachowują ją.</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="pl_PL"><Text>Jak używać</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="pl_PL"><Text>Zaznacz jednostkę i wybierz [B]Automatyczna eksploracja[/B] z jej akcji. Jeśli akcja jest niedostępna, przejdź jednostką na bezpieczniejszy obszar i spróbuj ponownie.</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="pl_PL"><Text>Eksploracja</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="pl_PL"><Text>Zwiadowca</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_UNIVERSALAUTOEXPLORE" Language="pl_PL"><Text>Uniwersalna automatyczna eksploracja</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS" Language="pl_PL"><Text>Zwiadowcy</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_DESCRIPTION" Language="pl_PL"><Text>Zwiadowcy i inne jednostki zwiadowcze mogą używać akcji Automatyczna eksploracja. Wyłącz, aby usunąć tę akcję z ich panelu jednostki.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_CHOOSE" Language="pl_PL"><Text>Wybierz zwiadowców</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND" Language="pl_PL"><Text>Lądowe jednostki wojskowe</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_DESCRIPTION" Language="pl_PL"><Text>Piechota, jednostki dystansowe, kawaleria i jednostki oblężnicze mogą używać akcji Automatyczna eksploracja. Wyłącz, aby usunąć tę akcję z ich panelu jednostki.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_CHOOSE" Language="pl_PL"><Text>Wybierz lądowe jednostki wojskowe</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL" Language="pl_PL"><Text>Jednostki pływające</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_DESCRIPTION" Language="pl_PL"><Text>Jednostki pływające mogą używać akcji Automatyczna eksploracja. Wyłącz, aby usunąć tę akcję z ich panelu jednostki.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_CHOOSE" Language="pl_PL"><Text>Wybierz jednostki pływające</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN" Language="pl_PL"><Text>Jednostki cywilne</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_DESCRIPTION" Language="pl_PL"><Text>Osadnicy, migranci, kupcy, misjonarze, wielkie postacie, dowódcy i inne jednostki, które nie walczą, mogą używać akcji Automatyczna eksploracja. Wyłączone, dopóki tego nie włączysz.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_CHOOSE" Language="pl_PL"><Text>Wybierz jednostki cywilne</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CHOOSE_DESCRIPTION" Language="pl_PL"><Text>Pokazuje jednostki z tej grupy, aby włączyć lub wyłączyć Automatyczną eksplorację dla każdej z nich.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_UNIT_DESCRIPTION" Language="pl_PL"><Text>Ta jednostka może używać akcji Automatyczna eksploracja. Ustawienie grupy ma pierwszeństwo: gdy grupa jest wyłączona, ta jednostka też.</Text></Replace>
     </LocalizedText>
 </Database>

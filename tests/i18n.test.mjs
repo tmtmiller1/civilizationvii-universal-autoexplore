@@ -1,6 +1,6 @@
 // i18n.test.mjs - Universal Auto Explore: every string a player sees can be translated.
 //
-// text/en_us is the source of truth (see text/README.md). This checks that every LOC_ key the data and modinfo use
+// text/en_us is the source of truth (see text/README.md). This checks that every LOC_ key the data, UI and modinfo use
 // has English text; that no tag is defined twice (a duplicate tag makes the game drop the whole file); that each
 // translation folder holds exactly the English tags, under the right Language, with the same {placeholders} and
 // [icon:...] tags and [B]/[BLIST]/[LI] markup as the English, and page titles that fit the Civilopedia sidebar; and
@@ -21,7 +21,11 @@ export const LANGUAGES = {
 };
 
 /** Base-game keys the mod uses without defining. */
-const BASE_KEYS = new Set(["LOC_MODULE_BASE_STANDARD_NAME"]);
+const BASE_KEYS = new Set([
+  "LOC_MODULE_BASE_STANDARD_NAME",
+  // The shared Options "Mods" category reuses the game's Additional Content titles (ui/uae-mod-options.js).
+  "LOC_UI_CONTENT_MGR_SUBTITLE", "LOC_UI_CONTENT_MGR_SUBTITLE_DESCRIPTION",
+]);
 
 /** tag -> text, for every Row (English) or Replace (translation) in the given files. */
 function textsIn(paths) {
@@ -43,10 +47,10 @@ test("i18n: no English tag is defined twice", () => {
   assert.deepEqual(english.dups, []);
 });
 
-test("i18n: every key the data and modinfo use has English text", () => {
+test("i18n: every key the data, UI and modinfo use has English text", () => {
   const missing = new Set();
-  for (const p of [...files("data", ".sql"), ...files("data", ".xml"), MODINFO]) {
-    const body = read(p).replace(/<!--[\s\S]*?-->/g, "").replace(/--.*$/gm, "");
+  for (const p of [...files("data", ".sql"), ...files("data", ".xml"), ...files("ui", ".js"), MODINFO]) {
+    const body = read(p).replace(/<!--[\s\S]*?-->/g, "").replace(/--.*$/gm, "").replace(/^\s*\/\/.*$/gm, "");
     for (const m of body.matchAll(/LOC_[A-Z0-9_]*[A-Z0-9]/g)) {
       if (!BASE_KEYS.has(m[0]) && !english.texts.has(m[0])) missing.add(`${m[0]} (${p})`);
     }

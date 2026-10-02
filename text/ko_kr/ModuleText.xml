@@ -9,10 +9,25 @@
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="ko_KR"><Text>대상 유닛</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="ko_KR"><Text>[BLIST][LI]육상 군사 유닛: 보병, 원거리, 기병, 공성.[LI]해상 유닛.[LI]DLC 유닛을 포함한 특유 유닛.[/LIST]</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="ko_KR"><Text>제외 대상</Text></Replace>
-        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="ko_KR"><Text>개척자, 이주민, 상인 등 민간 유닛과 사령관, 항공기는 이 행동을 얻지 않습니다. 정찰병처럼 이미 이 행동이 있는 유닛은 그대로 유지합니다.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="ko_KR"><Text>개척자, 이주민, 상인 등 민간 유닛과 사령관은 옵션 > 추가 콘텐츠에서 민간 유닛을 켠 경우에만 이 행동을 얻습니다. 항공기는 해당하지 않습니다. 정찰병 등 이미 이 행동이 있는 유닛은 그대로 유지합니다.</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="ko_KR"><Text>사용 방법</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="ko_KR"><Text>유닛을 선택한 뒤 행동 목록에서 [B]자동 탐험[/B]을 고르세요. 사용할 수 없다면 유닛을 안전한 곳으로 옮긴 뒤 다시 시도하세요.</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="ko_KR"><Text>탐험</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="ko_KR"><Text>정찰병</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_UNIVERSALAUTOEXPLORE" Language="ko_KR"><Text>유니버설 자동 탐험</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS" Language="ko_KR"><Text>정찰병</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_DESCRIPTION" Language="ko_KR"><Text>정찰병과 그 밖의 정찰 유닛이 자동 탐험을 사용할 수 있습니다. 끄면 유닛 패널에서 이 행동이 사라집니다.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_CHOOSE" Language="ko_KR"><Text>정찰병 선택</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND" Language="ko_KR"><Text>육상 군사 유닛</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_DESCRIPTION" Language="ko_KR"><Text>보병, 원거리, 기병, 공성 유닛이 자동 탐험을 사용할 수 있습니다. 끄면 유닛 패널에서 이 행동이 사라집니다.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_CHOOSE" Language="ko_KR"><Text>육상 군사 유닛 선택</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL" Language="ko_KR"><Text>해상 유닛</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_DESCRIPTION" Language="ko_KR"><Text>해상 유닛이 자동 탐험을 사용할 수 있습니다. 끄면 유닛 패널에서 이 행동이 사라집니다.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_CHOOSE" Language="ko_KR"><Text>해상 유닛 선택</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN" Language="ko_KR"><Text>민간 유닛</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_DESCRIPTION" Language="ko_KR"><Text>개척자, 이주민, 상인, 선교사, 위인, 사령관 등 전투하지 않는 유닛이 자동 탐험을 사용할 수 있습니다. 켜기 전까지는 꺼져 있습니다.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_CHOOSE" Language="ko_KR"><Text>민간 유닛 선택</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CHOOSE_DESCRIPTION" Language="ko_KR"><Text>이 그룹의 유닛을 표시하여 유닛마다 자동 탐험을 켜거나 끕니다.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_UNIT_DESCRIPTION" Language="ko_KR"><Text>이 유닛은 자동 탐험을 사용할 수 있습니다. 그룹 설정이 우선하며, 그룹이 꺼져 있으면 이 유닛도 꺼집니다.</Text></Replace>
     </LocalizedText>
 </Database>

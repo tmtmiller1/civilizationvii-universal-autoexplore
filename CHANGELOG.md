@@ -5,6 +5,36 @@ Loosely follows [Keep a Changelog](https://keepachangelog.com/) and Semantic
 Versioning. The Steam Workshop change note for each release is generated from the
 matching section below by `release.sh`.
 
+## [1.2.0] - 2026-10-01
+
+Options for which units can auto-explore, and civilian units back.
+
+### Added
+- A **Universal Auto Explore** block in Options > Add-ons with a checkbox for
+  each group of units that can auto-explore: Scouts, land military units and
+  naval units. Turning a group off removes the Automate Exploration action from
+  its units.
+- Under each group, a **Choose ...** checkbox opens the list of its units, one
+  checkbox per unit, to turn the action off for single units. The lists appear
+  when Options is opened from a game.
+- A **Civilian Units** group: Settlers, Migrants, Merchants, trade caravans and
+  ships, Missionaries, Great People, Commanders and other units that do not
+  fight can be given the action again, as in 1.0.0-1.0.2. The data patch tags
+  these units; the group starts off, and while it is off the action stays out of
+  their unit panel. Aircraft are still left out.
+- Every group but Civilian Units starts on, so the mod behaves as before until a
+  setting is changed. Changes apply the next time a unit is selected, and Cancel
+  undoes them.
+- The Civilopedia page's "Not Included" section explains the Civilian Units
+  option.
+- The Options text in all eleven languages.
+
+### Changed
+- 1.0.3 removed civilian units and Commanders over a reported crash. Crash-soak
+  runs with every unit type tagged and dozens of civilian units and Commanders
+  auto-exploring each turn (two map seeds, 60 turns, and a reloaded save) did
+  not crash, so they are offered again behind the Civilian Units option.
+
 ## [1.1.0] - 2026-10-01
 
 A Civilopedia page and ten translations.

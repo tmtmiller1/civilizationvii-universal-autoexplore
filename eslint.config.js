@@ -1,6 +1,5 @@
 // Dev-only ESLint flat config. Enforces the modularization gate used by active
-// tower mods. This mod currently has no ui JS sources; gate remains in place
-// to enforce standards if JS is added later.
+// tower mods on the ui/ scripts (the Options rows and the unit-panel filter).
 
 const ENGINE_GLOBALS = {
   Game: "readonly",

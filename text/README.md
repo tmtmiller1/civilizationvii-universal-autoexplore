@@ -1,15 +1,16 @@
 # Translating Universal Auto Explore (`text/`)
 
 Every string a player sees from this mod is a `LOC_*` tag defined here: the mod's name and description, shown in the
-Additional Content list, and the Civilopedia page "Automate Exploration" (Game Concepts, under Combat). The mod adds
-no other UI; the Automate Exploration action it unlocks is the game's own and is already translated by the game. A
-translation needs no code change: add the language's file here and two lines to the modinfo.
+Additional Content list, the Civilopedia page "Automate Exploration" (Game Concepts, under Combat), and the mod's
+block in Options > Add-ons. The Automate Exploration action it unlocks, and the unit names in the Options lists, are
+the game's own and are already translated by the game. A translation needs no code change: add the language's file
+here and two lines to the modinfo.
 
 ## Files
 
 | File | Contents |
 | --- | --- |
-| `en_us/ModuleText.xml` | The source of truth (13 tags): the mod's name and description, and the Civilopedia page's title, chapter titles, paragraphs and two search terms (`LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_*`, `LOC_PEDIA_UAE_TERM_*`). The page's structure is in `data/uae-civilopedia.xml`. |
+| `en_us/ModuleText.xml` | The source of truth (25 tags): the mod's name and description; the Civilopedia page's title, chapter titles, paragraphs and two search terms (`LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_*`, `LOC_PEDIA_UAE_TERM_*`); and the Options block's header, group labels and tooltips (`LOC_OPTIONS_GROUP_UNIVERSALAUTOEXPLORE`, `LOC_UAE_OPTION_*`). The page's structure is in `data/uae-civilopedia.xml`; the Options rows are built in `ui/uae-options.js`. |
 | `<lang>/ModuleText.xml` | The same tags in one language. |
 
 All ten languages ship as machine translations (2026-10-01) that use the game's own words for its terms (the

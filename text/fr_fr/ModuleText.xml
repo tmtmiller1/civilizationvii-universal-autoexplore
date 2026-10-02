@@ -9,10 +9,25 @@
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="fr_FR"><Text>Unités concernées</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="fr_FR"><Text>[BLIST][LI]Unités militaires terrestres : infanterie, à distance, cavalerie et siège.[LI]Unités navales.[LI]Unités exclusives, y compris celles des DLC.[/LIST]</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="fr_FR"><Text>Non concernées</Text></Replace>
-        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="fr_FR"><Text>Les Colons, Migrants, Marchands et autres unités civiles n'obtiennent pas l'action, pas plus que les Commandants et les avions. Les Éclaireurs et toute autre unité qui l'ont déjà la conservent.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="fr_FR"><Text>Les colons, migrants, marchands et autres unités civiles, ainsi que les commandants, n'obtiennent l'action que si Unités civiles est activé dans Options > Extensions. Les avions jamais. Les éclaireurs et toute autre unité qui l'a déjà la conservent.</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="fr_FR"><Text>Utilisation</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="fr_FR"><Text>Sélectionnez une unité et choisissez [B]Exploration automatique[/B] parmi ses actions. Si elle n'est pas disponible, déplacez l'unité en territoire plus sûr et réessayez.</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="fr_FR"><Text>Exploration</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="fr_FR"><Text>Éclaireur</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_UNIVERSALAUTOEXPLORE" Language="fr_FR"><Text>Exploration automatique universelle</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS" Language="fr_FR"><Text>Éclaireurs</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_DESCRIPTION" Language="fr_FR"><Text>Les éclaireurs et les autres unités de reconnaissance peuvent utiliser Exploration automatique. Désactivez pour retirer l'action de leur panneau d'unité.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_CHOOSE" Language="fr_FR"><Text>Choisir les éclaireurs</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND" Language="fr_FR"><Text>Unités militaires terrestres</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_DESCRIPTION" Language="fr_FR"><Text>Les unités d'infanterie, à distance, de cavalerie et de siège peuvent utiliser Exploration automatique. Désactivez pour retirer l'action de leur panneau d'unité.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_CHOOSE" Language="fr_FR"><Text>Choisir les unités militaires terrestres</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL" Language="fr_FR"><Text>Unités navales</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_DESCRIPTION" Language="fr_FR"><Text>Les unités navales peuvent utiliser Exploration automatique. Désactivez pour retirer l'action de leur panneau d'unité.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_CHOOSE" Language="fr_FR"><Text>Choisir les unités navales</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN" Language="fr_FR"><Text>Unités civiles</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_DESCRIPTION" Language="fr_FR"><Text>Les colons, migrants, marchands, missionnaires, personnages illustres, commandants et autres unités qui ne combattent pas peuvent utiliser Exploration automatique. Désactivé sauf si vous l'activez.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_CHOOSE" Language="fr_FR"><Text>Choisir les unités civiles</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CHOOSE_DESCRIPTION" Language="fr_FR"><Text>Affiche les unités de ce groupe pour activer ou désactiver Exploration automatique pour chacune.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_UNIT_DESCRIPTION" Language="fr_FR"><Text>Cette unité peut utiliser Exploration automatique. Le réglage de son groupe prime : si le groupe est désactivé, cette unité l'est aussi.</Text></Replace>
     </LocalizedText>
 </Database>

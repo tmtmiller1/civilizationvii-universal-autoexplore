@@ -9,10 +9,25 @@
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="zh_Hans_CN"><Text>适用单位</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="zh_Hans_CN"><Text>[BLIST][LI]陆地军事单位：步兵、远程、骑兵和攻城单位。[LI]海上单位。[LI]特色单位，包括 DLC 中的单位。[/LIST]</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="zh_Hans_CN"><Text>不适用</Text></Replace>
-        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="zh_Hans_CN"><Text>开拓者、移民、商人等平民单位不会获得该行动，指挥官和飞机也不会。探路者以及其他已拥有该行动的单位会保留它。</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="zh_Hans_CN"><Text>开拓者、移民、商人等平民单位以及指挥官，只有在“选项 > 附加内容”中开启“平民单位”后才能获得该行动。飞机始终不会获得。探路者以及其他已拥有该行动的单位会保留它。</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="zh_Hans_CN"><Text>使用方法</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="zh_Hans_CN"><Text>选中一个单位，从其行动中选择[B]自动探索[/B]。如果该行动不可用，请将单位移动到更安全之处后再试。</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="zh_Hans_CN"><Text>探索</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="zh_Hans_CN"><Text>探路者</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_UNIVERSALAUTOEXPLORE" Language="zh_Hans_CN"><Text>通用自动探索</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS" Language="zh_Hans_CN"><Text>探路者</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_DESCRIPTION" Language="zh_Hans_CN"><Text>探路者和其他侦察单位可以使用“自动探索”。关闭后，该行动会从其单位面板中移除。</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_CHOOSE" Language="zh_Hans_CN"><Text>选择探路者</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND" Language="zh_Hans_CN"><Text>陆地军事单位</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_DESCRIPTION" Language="zh_Hans_CN"><Text>步兵、远程、骑兵和攻城单位可以使用“自动探索”。关闭后，该行动会从其单位面板中移除。</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_CHOOSE" Language="zh_Hans_CN"><Text>选择陆地军事单位</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL" Language="zh_Hans_CN"><Text>海上单位</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_DESCRIPTION" Language="zh_Hans_CN"><Text>海上单位可以使用“自动探索”。关闭后，该行动会从其单位面板中移除。</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_CHOOSE" Language="zh_Hans_CN"><Text>选择海上单位</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN" Language="zh_Hans_CN"><Text>平民单位</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_DESCRIPTION" Language="zh_Hans_CN"><Text>开拓者、移民、商人、传教士、伟人、指挥官以及其他不参与战斗的单位可以使用“自动探索”。默认关闭，需手动开启。</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_CHOOSE" Language="zh_Hans_CN"><Text>选择平民单位</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CHOOSE_DESCRIPTION" Language="zh_Hans_CN"><Text>显示此组中的单位，以便逐个开启或关闭“自动探索”。</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_UNIT_DESCRIPTION" Language="zh_Hans_CN"><Text>此单位可以使用“自动探索”。组设置优先：组关闭时，此单位也关闭。</Text></Replace>
     </LocalizedText>
 </Database>

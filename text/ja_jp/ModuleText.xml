@@ -9,10 +9,25 @@
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="ja_JP"><Text>対象ユニット</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="ja_JP"><Text>[BLIST][LI]陸上の軍事ユニット: 歩兵、遠隔、騎兵、攻城。[LI]海洋ユニット。[LI]DLCのものを含む固有ユニット。[/LIST]</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="ja_JP"><Text>対象外</Text></Replace>
-        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="ja_JP"><Text>開拓者、移住者、商人などの民間人ユニット、司令官、航空機はこのアクションを得ません。斥候など、すでにこのアクションを持つユニットはそのまま使えます。</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="ja_JP"><Text>開拓者、移民、商人などの民間人ユニットと指揮官は、[オプション] > [追加コンテンツ] で「民間人ユニット」をオンにした場合のみこのアクションを得ます。航空機は対象外です。斥候など、すでにこのアクションを持つユニットはそのまま使えます。</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="ja_JP"><Text>使い方</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="ja_JP"><Text>ユニットを選択し、アクションから「[B]探索を自動化[/B]」を選びます。利用できない場合は、ユニットを安全性の高い場所へ移動してから再度試してください。</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="ja_JP"><Text>探索</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="ja_JP"><Text>斥候</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_UNIVERSALAUTOEXPLORE" Language="ja_JP"><Text>ユニバーサル自動探索</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS" Language="ja_JP"><Text>斥候</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_DESCRIPTION" Language="ja_JP"><Text>斥候とその他の偵察ユニットが「探索を自動化」を使用できます。オフにすると、ユニットパネルからこのアクションが消えます。</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_CHOOSE" Language="ja_JP"><Text>斥候を選択</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND" Language="ja_JP"><Text>陸上の軍事ユニット</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_DESCRIPTION" Language="ja_JP"><Text>歩兵、遠隔、騎兵、攻城ユニットが「探索を自動化」を使用できます。オフにすると、ユニットパネルからこのアクションが消えます。</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_CHOOSE" Language="ja_JP"><Text>陸上の軍事ユニットを選択</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL" Language="ja_JP"><Text>海洋ユニット</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_DESCRIPTION" Language="ja_JP"><Text>海洋ユニットが「探索を自動化」を使用できます。オフにすると、ユニットパネルからこのアクションが消えます。</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_CHOOSE" Language="ja_JP"><Text>海洋ユニットを選択</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN" Language="ja_JP"><Text>民間人ユニット</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_DESCRIPTION" Language="ja_JP"><Text>開拓者、移民、商人、宣教師、偉人、指揮官など、戦闘しないユニットが「探索を自動化」を使用できます。オンにするまではオフです。</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_CHOOSE" Language="ja_JP"><Text>民間人ユニットを選択</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CHOOSE_DESCRIPTION" Language="ja_JP"><Text>このグループのユニットを表示し、ユニットごとに「探索を自動化」をオン/オフします。</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_UNIT_DESCRIPTION" Language="ja_JP"><Text>このユニットは「探索を自動化」を使用できます。グループの設定が優先され、グループがオフの間はこのユニットもオフになります。</Text></Replace>
     </LocalizedText>
 </Database>

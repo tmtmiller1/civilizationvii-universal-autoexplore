@@ -7,8 +7,8 @@
 #         dist/workshop_item.vdf                   (steamcmd build manifest)
 #         dist/preview.png                         (rendered from docs/workshop-preview.svg)
 #
-# This is a DATA-ONLY mod (one SQL patch, one Civilopedia page + localized text), so there is no build step.
-# The quality gate is correspondingly small: lint plus the SQL validator, run through
+# One SQL patch, one Civilopedia page, localized text and a few plain UI scripts (the Options rows), so there is
+# no build step. The quality gate is lint, the SQL validator and the Node tests, run through
 # `npm run release:gate` like every other tower mod. Then it mirrors, audits and packages.
 # It never uploads: it prints the steamcmd command for you to run with your login.
 
@@ -105,6 +105,7 @@ echo "==> Verifying zip contents against allow-list"
 ALLOW="^${MOD_SLUG}/(${MODINFO}|README\.md|CHANGELOG\.md|LICENSE)$"
 ALLOW="$ALLOW"'|^'"${MOD_SLUG}"'/data/.+\.(xml|sql)$'
 ALLOW="$ALLOW"'|^'"${MOD_SLUG}"'/text/[a-z_]+/ModuleText\.xml$'
+ALLOW="$ALLOW"'|^'"${MOD_SLUG}"'/ui/uae-[a-z-]+\.js$'
 UNEXPECTED="$(unzip -Z1 "$ZIP_PATH" | grep -vE '/$' | grep -vE "$ALLOW" || true)"
 if [ -n "$UNEXPECTED" ]; then
     echo "error: zip contains entries not on the allow-list:"

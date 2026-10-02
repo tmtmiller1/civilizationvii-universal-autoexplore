@@ -7,7 +7,7 @@
 		<Package>UniversalAutoExplore</Package>
 		<PackageSortIndex>1000</PackageSortIndex>
 		<ShowInBrowser>1</ShowInBrowser>
-		<Version>1.1.0</Version>
+		<Version>1.2.0</Version>
 	</Properties>
 	<Dependencies>
 		<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
@@ -20,8 +20,9 @@
 		</Criteria>
 	</ActionCriteria>
 	<ActionGroups>
-		<!-- Shell scope: the mod's name and description in the Additional Content browser, which runs before any game
-		     is loaded. Each translation loads only when the game is in that language. -->
+		<!-- Shell scope: the mod's name and description in the Additional Content browser, and its group checkboxes
+		     in the main-menu Options screen, which run before any game is loaded. Each translation loads only when
+		     the game is in that language. -->
 		<ActionGroup id="universal-auto-explore-shell" scope="shell" criteria="always">
 			<Actions>
 				<UpdateText>
@@ -37,10 +38,20 @@
 					<Item locale="ru_RU">text/ru_ru/ModuleText.xml</Item>
 					<Item locale="zh_Hans_CN">text/zh_cn/ModuleText.xml</Item>
 				</UpdateText>
+				<UIScripts>
+					<Item>ui/uae-options.js</Item>
+				</UIScripts>
+				<ImportFiles>
+					<Item>ui/uae-mod-options.js</Item>
+					<Item>ui/uae-options.js</Item>
+					<Item>ui/uae-settings.js</Item>
+					<Item>ui/uae-unit-classes.js</Item>
+				</ImportFiles>
 			</Actions>
 		</ActionGroup>
 		<!-- High LoadOrder so this runs after every unit type (base, age, and DLC)
-		     has been inserted into the current age's database. -->
+		     has been inserted into the current age's database. The UI scripts add the in-game Options rows and
+		     drop the action from the unit panel for groups or units the player turned off. -->
 		<ActionGroup id="universal-auto-explore-grant" scope="game" criteria="always">
 			<Actions>
 				<UpdateDatabase>
@@ -60,6 +71,17 @@
 					<Item locale="ru_RU">text/ru_ru/ModuleText.xml</Item>
 					<Item locale="zh_Hans_CN">text/zh_cn/ModuleText.xml</Item>
 				</UpdateText>
+				<UIScripts>
+					<Item>ui/uae-options.js</Item>
+					<Item>ui/uae-unit-actions.js</Item>
+				</UIScripts>
+				<ImportFiles>
+					<Item>ui/uae-mod-options.js</Item>
+					<Item>ui/uae-options.js</Item>
+					<Item>ui/uae-settings.js</Item>
+					<Item>ui/uae-unit-actions.js</Item>
+					<Item>ui/uae-unit-classes.js</Item>
+				</ImportFiles>
 			</Actions>
 			<Properties>
 				<LoadOrder>9999</LoadOrder>

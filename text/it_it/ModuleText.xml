@@ -9,10 +9,25 @@
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="it_IT"><Text>Quali unità</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="it_IT"><Text>[BLIST][LI]Unità militari di terra: fanteria, a distanza, cavalleria e assedio.[LI]Unità navali.[LI]Unità esclusive, comprese quelle dei DLC.[/LIST]</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="it_IT"><Text>Escluse</Text></Replace>
-        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="it_IT"><Text>Coloni, Migranti, Mercanti e le altre unità civili non ottengono l'azione, e nemmeno i Comandanti e gli aerei. Gli Scout e ogni altra unità che già la possiede la mantengono.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="it_IT"><Text>Coloni, migranti, mercanti e altre unità civili, e i comandanti, ottengono l'azione solo se Unità civili è attivato in Opzioni > Add-on. Gli aerei mai. Gli Scout e qualsiasi altra unità che la possiede già la mantengono.</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="it_IT"><Text>Come usarla</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="it_IT"><Text>Seleziona un'unità e scegli [B]Esplorazione automatica[/B] tra le sue azioni. Se non è disponibile, sposta l'unità in un territorio più sicuro e riprova.</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="it_IT"><Text>Esplorazione</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="it_IT"><Text>Scout</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_UNIVERSALAUTOEXPLORE" Language="it_IT"><Text>Esplorazione automatica universale</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS" Language="it_IT"><Text>Scout</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_DESCRIPTION" Language="it_IT"><Text>Gli Scout e le altre unità da ricognizione possono usare Esplorazione automatica. Disattiva per rimuovere l'azione dal loro pannello unità.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_CHOOSE" Language="it_IT"><Text>Scegli gli Scout</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND" Language="it_IT"><Text>Unità militari di terra</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_DESCRIPTION" Language="it_IT"><Text>Le unità di fanteria, a distanza, di cavalleria e d'assedio possono usare Esplorazione automatica. Disattiva per rimuovere l'azione dal loro pannello unità.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_CHOOSE" Language="it_IT"><Text>Scegli le unità militari di terra</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL" Language="it_IT"><Text>Unità navali</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_DESCRIPTION" Language="it_IT"><Text>Le unità navali possono usare Esplorazione automatica. Disattiva per rimuovere l'azione dal loro pannello unità.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_CHOOSE" Language="it_IT"><Text>Scegli le unità navali</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN" Language="it_IT"><Text>Unità civili</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_DESCRIPTION" Language="it_IT"><Text>Coloni, migranti, mercanti, missionari, personaggi illustri, comandanti e altre unità che non combattono possono usare Esplorazione automatica. Disattivato finché non lo attivi.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_CHOOSE" Language="it_IT"><Text>Scegli le unità civili</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CHOOSE_DESCRIPTION" Language="it_IT"><Text>Mostra le unità di questo gruppo per attivare o disattivare Esplorazione automatica per ciascuna.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_UNIT_DESCRIPTION" Language="it_IT"><Text>Questa unità può usare Esplorazione automatica. L'impostazione del gruppo ha la precedenza: se il gruppo è disattivato, lo è anche questa unità.</Text></Replace>
     </LocalizedText>
 </Database>

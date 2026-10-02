@@ -28,7 +28,7 @@
             <Text>Not Included</Text>
         </Row>
         <Row Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1">
-            <Text>Settlers, Migrants, Merchants and other civilian units do not gain the action, and neither do Commanders or aircraft. Scouts and any other unit that already has it keep it.</Text>
+            <Text>Settlers, Migrants, Merchants and other civilian units, and Commanders, gain the action only when Civilian Units is turned on in Options > Add-ons. Aircraft never do. Scouts and any other unit that already has it keep it.</Text>
         </Row>
         <Row Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE">
             <Text>How to Use</Text>
@@ -41,6 +41,54 @@
         </Row>
         <Row Tag="LOC_PEDIA_UAE_TERM_SCOUT">
             <Text>Scout</Text>
+        </Row>
+
+
+        <!-- Options > Add-ons (ui/uae-options.js) -->
+        <Row Tag="LOC_OPTIONS_GROUP_UNIVERSALAUTOEXPLORE">
+            <Text>Universal Auto Explore</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_SCOUTS">
+            <Text>Scouts</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_SCOUTS_DESCRIPTION">
+            <Text>Scouts and other recon units can use Automate Exploration. Turn off to remove the action from their unit panel.</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_SCOUTS_CHOOSE">
+            <Text>Choose Scouts</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_LAND">
+            <Text>Land Military Units</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_LAND_DESCRIPTION">
+            <Text>Infantry, ranged, cavalry and siege units can use Automate Exploration. Turn off to remove the action from their unit panel.</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_LAND_CHOOSE">
+            <Text>Choose Land Military Units</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_NAVAL">
+            <Text>Naval Units</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_NAVAL_DESCRIPTION">
+            <Text>Naval units can use Automate Exploration. Turn off to remove the action from their unit panel.</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_NAVAL_CHOOSE">
+            <Text>Choose Naval Units</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_CIVILIAN">
+            <Text>Civilian Units</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_CIVILIAN_DESCRIPTION">
+            <Text>Settlers, Migrants, Merchants, Missionaries, Great People, Commanders and other units that do not fight can use Automate Exploration. Off unless you turn it on.</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_CIVILIAN_CHOOSE">
+            <Text>Choose Civilian Units</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_CHOOSE_DESCRIPTION">
+            <Text>Show the units in this group to turn Automate Exploration on or off for each one.</Text>
+        </Row>
+        <Row Tag="LOC_UAE_OPTION_UNIT_DESCRIPTION">
+            <Text>This unit can use Automate Exploration. Its group's setting comes first: while the group is off, so is this unit.</Text>
         </Row>
     </EnglishText>
 </Database>

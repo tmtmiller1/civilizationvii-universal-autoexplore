@@ -9,10 +9,25 @@
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_TITLE" Language="ru_RU"><Text>Какие юниты</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_UNITS_PARA_1" Language="ru_RU"><Text>[BLIST][LI]Сухопутные военные юниты: пехота, дальнобойные, кавалерия и осадные.[LI]Морские юниты.[LI]Уникальные юниты, в том числе из DLC.[/LIST]</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_TITLE" Language="ru_RU"><Text>Исключения</Text></Replace>
-        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="ru_RU"><Text>Поселенцы, мигранты, торговцы и другие гражданские юниты не получают это действие, как и командиры и самолёты. Разведчики и другие юниты, у которых оно уже есть, сохраняют его.</Text></Replace>
+        <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_EXCLUDED_PARA_1" Language="ru_RU"><Text>Поселенцы, мигранты, торговцы и другие гражданские юниты, а также командиры получают это действие, только если в разделе «Настройки > Дополнения» включены «Гражданские юниты». Авиация — никогда. Разведчики и другие юниты, у которых оно уже есть, сохраняют его.</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_TITLE" Language="ru_RU"><Text>Как использовать</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_USE_PARA_1" Language="ru_RU"><Text>Выделите юнит и выберите в его действиях «[B]Автоматическое исследование[/B]». Если действие недоступно, переместите юнит в более безопасное место и попробуйте снова.</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_EXPLORATION" Language="ru_RU"><Text>Исследование</Text></Replace>
         <Replace Tag="LOC_PEDIA_UAE_TERM_SCOUT" Language="ru_RU"><Text>Разведчик</Text></Replace>
+        <Replace Tag="LOC_OPTIONS_GROUP_UNIVERSALAUTOEXPLORE" Language="ru_RU"><Text>Универсальное автоисследование</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS" Language="ru_RU"><Text>Разведчики</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_DESCRIPTION" Language="ru_RU"><Text>Разведчики и другие разведывательные юниты могут использовать «Автоматическое исследование». Выключите, чтобы убрать действие из их панели юнита.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_SCOUTS_CHOOSE" Language="ru_RU"><Text>Выбрать разведчиков</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND" Language="ru_RU"><Text>Сухопутные военные юниты</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_DESCRIPTION" Language="ru_RU"><Text>Пехота, дальнобойные, кавалерия и осадные юниты могут использовать «Автоматическое исследование». Выключите, чтобы убрать действие из их панели юнита.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_LAND_CHOOSE" Language="ru_RU"><Text>Выбрать сухопутные военные юниты</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL" Language="ru_RU"><Text>Морские юниты</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_DESCRIPTION" Language="ru_RU"><Text>Морские юниты могут использовать «Автоматическое исследование». Выключите, чтобы убрать действие из их панели юнита.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_NAVAL_CHOOSE" Language="ru_RU"><Text>Выбрать морские юниты</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN" Language="ru_RU"><Text>Гражданские юниты</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_DESCRIPTION" Language="ru_RU"><Text>Поселенцы, мигранты, торговцы, миссионеры, великие люди, командиры и другие юниты, которые не сражаются, могут использовать «Автоматическое исследование». Выключено, пока вы не включите.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CIVILIAN_CHOOSE" Language="ru_RU"><Text>Выбрать гражданские юниты</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_CHOOSE_DESCRIPTION" Language="ru_RU"><Text>Показывает юниты этой группы, чтобы включить или выключить «Автоматическое исследование» для каждого.</Text></Replace>
+        <Replace Tag="LOC_UAE_OPTION_UNIT_DESCRIPTION" Language="ru_RU"><Text>Этот юнит может использовать «Автоматическое исследование». Настройка группы важнее: пока группа выключена, выключен и этот юнит.</Text></Replace>
     </LocalizedText>
 </Database>

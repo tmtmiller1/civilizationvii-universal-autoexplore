@@ -11,10 +11,14 @@ ships, unlocked on every land and naval military unit: infantry, ranged,
 cavalry, siege, every ship, and unique units.
 
 - Any of these units can be told to explore and fill in the fog on its own.
-- Settlers, Migrants, Merchants and other civilians, Commanders, and aircraft
-  do not get it. Scouts keep it as before.
-- It unlocks a command the game already has, so there's no new UI. If you can
-  auto-explore a Scout, you can use this.
+- Settlers, Migrants, Merchants and other civilians, and Commanders, get it only
+  when you turn on **Civilian Units** in Options. Aircraft never get it. Scouts
+  keep it as before.
+- It unlocks a command the game already has. If you can auto-explore a Scout,
+  you can use this.
+- **Options > Add-ons > Universal Auto Explore** turns the action on or off for
+  Scouts, land military units, naval units and civilian units, and for any
+  single unit in those groups. Every group but Civilian Units starts on.
 - Coverage includes base game, all DLC, independent-power units, and units
   added by future patches, automatically.
 - A Civilopedia page, **Automate Exploration** (Game Concepts, under Combat),
@@ -26,19 +30,48 @@ At a glance (for modders):
 
 - **Mod id:** `universal-auto-explore`
 - **Author:** Tower
-- **Version:** 1.1.0
+- **Version:** 1.2.0
 - **Requires:** `base-standard` (i.e. the base game). No DLC required.
 
 ---
+
+## Options
+
+Under **Options > Add-ons**, the **Universal Auto Explore** block has a checkbox
+for each group of units:
+
+- **Scouts**: Scouts and other recon units, such as the Chasqui.
+- **Land Military Units**: infantry, ranged, cavalry and siege, including
+  unique units.
+- **Naval Units**: every warship.
+- **Civilian Units**: every unit that does not fight: Settlers, Migrants,
+  Merchants, trade caravans and ships, Missionaries, Great People, Commanders
+  and the like. Off until you turn it on.
+
+Below each group, **Choose ...** opens a list of the units in it, one checkbox
+per unit. Turning a group off removes the Automate Exploration action from every
+unit in it, whatever their own checkboxes say; turning a unit off removes it from
+that unit only. Every group but Civilian Units starts on, which is how the mod
+behaves without these options.
+
+- Changes apply the next time you select a unit; no reload is needed. A unit
+  that is already exploring keeps going until it stops on its own.
+- The unit lists show the units of the current age, so open Options from a game
+  to see them. The main-menu Options screen shows the four group checkboxes.
+- **Cancel** puts back the settings the screen opened with.
+- Settings are saved for the game you are in and for new games.
+- The options only hide the action. Which units can auto-explore at all is set
+  by the data patch below, which leaves aircraft out, so they are not listed.
 
 ## How it works
 
 The game enables auto-explore on units carrying the `UNIT_CLASS_AUTOEXPLORE`
 type tag (by default only Scouts, a handful of uniques, and most warships have
-it). This mod adds that tag to every land combat, recon and naval unit.
+it). This mod adds that tag to every land combat, recon and naval unit, and to
+every non-combat unit on land and at sea for the Civilian Units option.
 
-Instead of hand-listing hundreds of unit types, it applies the tag with a single
-set-based SQL patch — [data/grant-autoexplore.sql](data/grant-autoexplore.sql):
+Instead of hand-listing hundreds of unit types, it applies the tag with two
+set-based SQL statements — [data/grant-autoexplore.sql](data/grant-autoexplore.sql):
 
 ```sql
 INSERT OR IGNORE INTO TypeTags (Type, Tag)
@@ -51,6 +84,13 @@ WHERE  u.FormationClass IN (
        )
   AND  u.FoundCity = 0
   AND  u.UnitType NOT LIKE '%SANDBOX%';
+
+INSERT OR IGNORE INTO TypeTags (Type, Tag)
+SELECT u.UnitType, 'UNIT_CLASS_AUTOEXPLORE'
+FROM   Units u
+WHERE  u.CoreClass IN ('CORE_CLASS_CIVILIAN', 'CORE_CLASS_SUPPORT')
+  AND  u.Domain IN ('DOMAIN_LAND', 'DOMAIN_SEA')
+  AND  u.UnitType NOT LIKE '%SANDBOX%';
 ```
 
 Why this shape:
@@ -59,10 +99,14 @@ Why this shape:
   classes exist in the current age's database: base game, every DLC civ/leader
   pack, independent-power units, and any units a future patch adds. Nothing to
   update per release.
-- **Scoped to units the explore AI can drive.** The game's explore pathing only
-  handles recon, land combat and naval units. Civilians, Commanders and aircraft
-  crash it, so their formation classes stay out, and `FoundCity = 0` keeps
-  city-founders out as well. `scripts/validate-sql.mjs` fails if they come back.
+- **Non-combat units are tagged, but hidden by default.** The second statement
+  tags Settlers, Migrants, Merchants, Great People, Commanders and other
+  non-combat units. The Civilian Units option starts off, and while it is off
+  `ui/uae-unit-actions.js` keeps the action out of their unit panel. Aircraft
+  are never tagged; `scripts/validate-sql.mjs` fails if `DOMAIN_AIR` appears.
+  1.0.3 had removed these units over a reported crash; crash-soak runs with
+  every unit type tagged and dozens of non-combat units auto-exploring (two
+  seeds, 60 turns, and a reloaded save) did not reproduce it.
 - **`INSERT OR IGNORE`** skips units that already carry the tag (they collide on
   the `TypeTags (Tag, Type)` primary key), so there is no duplicate-row load
   error and no need to maintain an exclusion list.
@@ -87,9 +131,14 @@ universal_auto-explore/
   universal-auto-explore.modinfo   # mod manifest
   data/grant-autoexplore.sql       # the single set-based tag patch
   data/uae-civilopedia.xml         # Civilopedia page: Game Concepts > Combat > Automate Exploration
+  ui/uae-options.js                # the Options rows (groups and per-unit lists)
+  ui/uae-unit-actions.js           # hides the action in the unit panel for groups/units turned off
+  ui/uae-settings.js               # saved settings (shared modSettings key + per-save copy)
+  ui/uae-unit-classes.js           # which group a unit belongs to
+  ui/uae-mod-options.js            # registers the shared "Mods" Options category
   text/en_us/ModuleText.xml        # name, description and Civilopedia text (source of truth)
   text/<lang>/ModuleText.xml       # the ten translations; text/README.md explains them
-  tests/                           # translation and Civilopedia page checks (npm run verify)
+  tests/                           # translation, Civilopedia page and options checks (npm run verify)
   README.md  README.pdf            # this document
   CHANGELOG.md                     # release history (drives the Steam change note)
   CONTRIBUTING.md  LICENSE         # contributor guide + MIT license
@@ -105,16 +154,16 @@ universal_auto-explore/
     build_readme_pdf.sh            # regenerate README.pdf
 ```
 
-Only the modinfo, `data/`, `text/`, README, CHANGELOG, and LICENSE ship in the
-Workshop zip; `docs/`, `images/`, `scripts/`, and the release tooling are
+Only the modinfo, `data/`, `text/`, `ui/`, README, CHANGELOG, and LICENSE ship
+in the Workshop zip; `docs/`, `images/`, `scripts/`, and the release tooling are
 repo-only (excluded by `release.sh`).
 
-Everything below `data/`, `text/`, plus the modinfo and README is what ships; the
-rest is release tooling and is excluded from the packaged zip.
+Everything below `data/`, `text/`, `ui/`, plus the modinfo and README is what
+ships; the rest is release tooling and is excluded from the packaged zip.
 
 ## Translations
 
-The mod's name, description and Civilopedia page ship in English and the game's ten other
+The mod's name, description, Civilopedia page and Options text ship in English and the game's ten other
 languages: German, Spanish, French, Italian, Japanese, Korean, Polish,
 Portuguese (Brazil), Russian and Simplified Chinese. They are machine
 translations that use the game's own words for its terms, such as the
