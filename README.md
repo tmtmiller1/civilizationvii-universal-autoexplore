@@ -19,8 +19,8 @@ cavalry, siege, every ship, and unique units.
 - **Options > Add-ons > Universal Auto Explore** turns the action on or off for
   Scouts, land military units, naval units and civilian units, and for any
   single unit in those groups. Every group but Civilian Units starts on.
-- Coverage includes base game, all DLC, independent-power units, and units
-  added by future patches, automatically.
+- Coverage includes the base game, all DLC, independent-power units, and units
+  added by future patches, with no mod update.
 - A Civilopedia page, **Automate Exploration** (Game Concepts, under Combat),
   lists which units can explore and how to use the action.
 - It does not touch balance, movement, combat, costs, or base-game files, and is
@@ -31,7 +31,7 @@ At a glance (for modders):
 - **Mod id:** `universal-auto-explore`
 - **Author:** Tower
 - **Version:** 1.2.0
-- **Requires:** `base-standard` (i.e. the base game). No DLC required.
+- **Requires:** `base-standard` (the base game). No DLC required.
 
 ---
 
@@ -71,7 +71,8 @@ it). This mod adds that tag to every land combat, recon and naval unit, and to
 every non-combat unit on land and at sea for the Civilian Units option.
 
 Instead of hand-listing hundreds of unit types, it applies the tag with two
-set-based SQL statements — [data/grant-autoexplore.sql](data/grant-autoexplore.sql):
+set-based SQL statements in
+[data/grant-autoexplore.sql](data/grant-autoexplore.sql):
 
 ```sql
 INSERT OR IGNORE INTO TypeTags (Type, Tag)
@@ -95,41 +96,38 @@ WHERE  u.CoreClass IN ('CORE_CLASS_CIVILIAN', 'CORE_CLASS_SUPPORT')
 
 Why this shape:
 
-- **Low-maintenance coverage.** It tags whatever units of those formation
-  classes exist in the current age's database: base game, every DLC civ/leader
-  pack, independent-power units, and any units a future patch adds. Nothing to
-  update per release.
-- **Non-combat units are tagged, but hidden by default.** The second statement
+- It tags whatever units of those classes exist in the current age's database:
+  base game, every DLC civ/leader pack, independent-power units, and any units
+  a future patch adds. There is nothing to update per release.
+- Non-combat units are tagged but hidden by default. The second statement
   tags Settlers, Migrants, Merchants, Great People, Commanders and other
   non-combat units. The Civilian Units option starts off, and while it is off
   `ui/uae-unit-actions.js` keeps the action out of their unit panel. Aircraft
   are never tagged; `scripts/validate-sql.mjs` fails if `DOMAIN_AIR` appears.
-  1.0.3 had removed these units over a reported crash; crash-soak runs with
-  every unit type tagged and dozens of non-combat units auto-exploring (two
-  seeds, 60 turns, and a reloaded save) did not reproduce it.
-- **`INSERT OR IGNORE`** skips units that already carry the tag (they collide on
+  1.0.3 had removed these units over a reported crash. Crash-soak runs with
+  every unit type tagged and dozens of non-combat units auto-exploring did not
+  reproduce it.
+- `INSERT OR IGNORE` skips units that already carry the tag (they collide on
   the `TypeTags (Tag, Type)` primary key), so there is no duplicate-row load
-  error and no need to maintain an exclusion list.
-- **Runs on new games and loaded saves.** The action group uses `AlwaysMet`, so
+  error and no exclusion list to maintain.
+- It runs on new games and loaded saves. The action group uses `AlwaysMet`, so
   the patch executes whenever game scope initializes, including save loads. A
-  high `LoadOrder` (9999) ensures it runs after all unit types have been
-  inserted.
-- **`SANDBOX` filter** drops the engine test units (`UNIT_SANDBOX`,
+  high `LoadOrder` (9999) puts it after all unit types have been inserted.
+- The `SANDBOX` filter drops the engine test units (`UNIT_SANDBOX`,
   `UNIT_AUDIO_SANDBOX_*`), which never appear in normal play.
 
 `UNIT_CLASS_AUTOEXPLORE`, the `Units`/`TypeTags` table names, the
-`FORMATION_CLASS_*` values, and
-`AGE_*` are engine-owned identifiers and are left unchanged. Renaming them would
-break the effect. Everything author-owned (mod id, filename, action-group id,
-localization tags, author) was renamed for this rebuild; no attribution to the
-original creator remains.
+`FORMATION_CLASS_*` values, and `AGE_*` are engine-owned identifiers and are
+left unchanged. Renaming them would break the effect. Everything author-owned
+(mod id, filename, action-group id, localization tags, author) was renamed for
+this rebuild; no attribution to the original creator remains.
 
 ## Layout
 
 ```
 universal_auto-explore/
   universal-auto-explore.modinfo   # mod manifest
-  data/grant-autoexplore.sql       # the single set-based tag patch
+  data/grant-autoexplore.sql       # the set-based tag patch
   data/uae-civilopedia.xml         # Civilopedia page: Game Concepts > Combat > Automate Exploration
   ui/uae-options.js                # the Options rows (groups and per-unit lists)
   ui/uae-unit-actions.js           # hides the action in the unit panel for groups/units turned off
@@ -158,32 +156,29 @@ Only the modinfo, `data/`, `text/`, `ui/`, README, CHANGELOG, and LICENSE ship
 in the Workshop zip; `docs/`, `images/`, `scripts/`, and the release tooling are
 repo-only (excluded by `release.sh`).
 
-Everything below `data/`, `text/`, `ui/`, plus the modinfo and README is what
-ships; the rest is release tooling and is excluded from the packaged zip.
-
 ## Translations
 
-The mod's name, description, Civilopedia page and Options text ship in English and the game's ten other
-languages: German, Spanish, French, Italian, Japanese, Korean, Polish,
-Portuguese (Brazil), Russian and Simplified Chinese. They are machine
-translations that use the game's own words for its terms, such as the
+The mod's name, description, Civilopedia page and Options text ship in English
+and the game's ten other languages: German, Spanish, French, Italian, Japanese,
+Korean, Polish, Portuguese (Brazil), Russian and Simplified Chinese. They are
+machine translations that use the game's own words for its terms, such as the
 Automate Exploration action; corrections from native speakers are welcome. To
 fix or add a language, see [`text/README.md`](text/README.md).
 
 ## Publishing to Steam Workshop
 
-`release.sh` builds a clean, audited package — it does **not** upload (that needs
-your Steam login).
+`release.sh` builds and audits the package. It does not upload; that needs your
+Steam login.
 
 1. Bump `<Version>` in the modinfo and add a matching `## [x.y.z]` section to
    `CHANGELOG.md`.
 2. Run `./release.sh`. It writes `dist/`:
-   - `universal-auto-explore-vX.Y.Z.zip` — the mod, modinfo at the zip root
+   - `universal-auto-explore-vX.Y.Z.zip`: the mod, modinfo at the zip root
      (also fine for manual install / CivMods).
-   - `dist/universal_auto-explore/` — the upload content folder.
-   - `preview.png` — 1024×1024 card rendered from `docs/workshop-preview.svg`
+   - `dist/universal_auto-explore/`: the upload content folder.
+   - `preview.png`: 1024×1024 card rendered from `docs/workshop-preview.svg`
      (needs `rsvg-convert`; `brew install librsvg`).
-   - `workshop_item.vdf` — the steamcmd manifest (appid `1295660`).
+   - `workshop_item.vdf`: the steamcmd manifest (appid `1295660`).
 3. Upload with the command the script prints:
    ```
    ~/steamcmd/steamcmd.sh +login <yourSteamLogin> \
@@ -191,7 +186,7 @@ your Steam login).
    ```
 4. The first upload creates the item and prints a `publishedfileid`. Save it:
    `echo <publishedfileid> > steam_workshop_id.txt`. Later runs then upload in
-   **update** mode and generate the Steam change note from the current
+   update mode and generate the Steam change note from the current
    `CHANGELOG.md` section.
 
 ## Notes

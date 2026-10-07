@@ -1,15 +1,15 @@
 [h1]Universal Auto Explore[/h1]
 
 [b]Built for Civilization VII 1.4.1[/b]
-Grants the game's built-in auto-explore action to every unit, not only Scouts. A small, data-only mod with no user interface.
+Gives the game's built-in Automate Exploration action to every military unit on land and at sea, not only Scouts. Civilian units and Commanders can have it too, behind an option that starts off.
 
-Earlier auto-explore mods were not updated for 1.4.1 and granted the action by listing unit types by hand, which misses new, DLC, and unique units and needs maintenance each patch. This mod applies the action with one set-based database rule that tags every unit at load time, so coverage is complete and does not need per-patch updates.
+Earlier auto-explore mods were not updated for 1.4.1 and granted the action by listing unit types by hand, which misses new, DLC and unique units and needs a fix each patch. This mod applies the action with set-based database rules that tag every unit at load time, so coverage is complete and a patch that adds units needs no mod update.
 
 [b]What it does:[/b]
 [list]
-[*]Adds the standard auto-explore action to every unit that lacks it.
+[*]Adds the standard auto-explore action to every military unit that lacks it.
 [*]Leaves units that already have it (Scouts, most warships, some uniques) unchanged.
-[*]Adds no panels or buttons.
+[*]Adds a block under Options > Add-ons to turn the action off per group or per unit.
 [/list]
 
 [b]Coverage:[/b]
@@ -23,13 +23,13 @@ Earlier auto-explore mods were not updated for 1.4.1 and granted the action by l
 [b]What it does not do:[/b]
 [list]
 [*]It does not change gameplay balance.
-[*]It does not alter movement, combat, or unit costs.
+[*]It does not alter movement, combat or unit costs.
 [*]It does not replace base-game files.
 [/list]
 
 [b]Compatibility:[/b]
 [list]
-[*]Data-only and additive.
+[*]Additive, and safe to add to a game in progress.
 [*]No base-game file replacement.
 [*]Requires only the base game; all DLC supported.
 [/list]
@@ -44,5 +44,5 @@ Earlier auto-explore mods were not updated for 1.4.1 and granted the action by l
 
 [b]Credits:[/b]
 [list]
-[*]Tower — Civilization VII implementation.
+[*]Tower, Civilization VII implementation.
 [/list]

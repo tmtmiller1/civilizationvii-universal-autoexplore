@@ -1,0 +1,26 @@
+[h1]Universal Auto Explore[/h1]
+Universal Auto Explore grants the game's built-in auto-explore action to every unit, not only Scouts.
+This is a small, data-only mod with a single purpose: make auto-explore universally available without manually listing every unit type.
+Earlier auto-explore mods were not updated for 1.4.1, and many granted the action by listing unit types one by one. That approach can miss new, DLC, unique, captured, or later-patch units, and it requires maintenance after every update.
+Universal Auto Explore instead uses one set-based database rule that tags every unit at load time. That means coverage is broad, automatic, and much less likely to break unless Firaxis changes something structural about unit actions.
+[h2]What it does[/h2]
+[list]
+[*]Adds the standard auto-explore action to every unit.
+[*]Allows any unit to reveal terrain on its own until it runs out of map or receives new orders.
+[*]Leaves units that already have auto-explore unchanged.
+[*]Adds no new panels, buttons, screens, or UI clutter.
+[/list]
+[h2]Source[/h2]
+[list]
+[*][url=https://github.com/tmtmiller1/civilizationvii-universal-autoexplore]Open source on GitHub[/url]
+[/list]
+[h2]For modders[/h2]
+This mod is developed with [url=https://github.com/tmtmiller1/civilizationvii_tower-bench]Tower Bench[/url], a free, open-source test bench for macOS to make it easier to create Civilization VII mods.
+[h2]Credits[/h2]
+[list]
+[*][b]Tower[/b], for Civilization VII implementation.
+[/list]
+[h2]Special Thanks[/h2]
+[list]
+[*][b]Potato McWhisky[/b], for teaching me to love again, Civilization-wise (Civ VI), after growing up as a Civilization II, IV, and V player.
+[/list]

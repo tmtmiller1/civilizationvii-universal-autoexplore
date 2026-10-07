@@ -22,7 +22,7 @@ APPID="1295660"                            # Sid Meier's Civilization VII
 
 DIST_DIR="dist"
 
-# ── Locate the modinfo (support being run from here or a parent) ───────────
+# Locate the modinfo (run from here or from the parent)
 if [ -f "$MODINFO" ]; then
     SRC_DIR="."
 elif [ -f "$MOD_SLUG/$MODINFO" ]; then
@@ -32,7 +32,7 @@ else
     exit 1
 fi
 
-# ── Version + author gates ─────────────────────────────────────────────────
+# Version + author gates
 VERSION="$(grep -oE '<Version>[^<]+</Version>' "$SRC_DIR/$MODINFO" \
     | head -1 | sed -E 's|</?Version>||g')"
 [ -n "$VERSION" ] || { echo "error: could not parse <Version> from $MODINFO"; exit 1; }
@@ -45,16 +45,15 @@ case "$AUTHORS" in
         exit 1 ;;
 esac
 
-# ── Quality gate ───────────────────────────────────────────────────────────
-# Never package a red build. `release:gate` runs lint plus the SQL validator.
-# Set SKIP_VERIFY=1 to bypass (e.g. an emergency hotfix where the gate is knowingly red).
+# Quality gate: `release:gate` runs lint, the SQL validator and the tests; a red build is not packaged.
+# Set SKIP_VERIFY=1 to bypass, for a hotfix when the gate is known to be red.
 if [ "${SKIP_VERIFY:-0}" != "1" ] && [ -f "$SRC_DIR/package.json" ]; then
     echo "release: running 'npm run release:gate' (set SKIP_VERIFY=1 to skip)..."
     ( cd "$SRC_DIR" && npm run release:gate ) \
         || { echo "release: 'npm run release:gate' FAILED — aborting."; exit 1; }
 fi
 
-# ── Workshop published file id (persisted outside dist/, survives rm -rf) ──
+# Workshop published file id, kept outside dist/ so it survives rm -rf
 WORKSHOP_ID_FILE="$SRC_DIR/steam_workshop_id.txt"
 PUBLISHED_FILE_ID="${WORKSHOP_PUBLISHED_FILE_ID:-}"
 SAVED_PUBLISHED_FILE_ID=""
@@ -99,8 +98,8 @@ find "$TARGET_DIR" \( -name '*.xml' -o -name '*.modinfo' \) -print0 \
 echo "==> Zipping $ZIP_PATH"
 ( cd "$DIST_DIR" && zip -qr "$ZIP_NAME" "$MOD_SLUG" )
 
-# Allow-list audit: fail on any shipped file that isn't expected, so a loose
-# rsync exclude can't silently ship docs/dev files.
+# Allow-list audit: fail on any shipped file that isn't expected, so a loose rsync exclude can't ship docs/dev
+# files unnoticed.
 echo "==> Verifying zip contents against allow-list"
 ALLOW="^${MOD_SLUG}/(${MODINFO}|README\.md|CHANGELOG\.md|LICENSE)$"
 ALLOW="$ALLOW"'|^'"${MOD_SLUG}"'/data/.+\.(xml|sql)$'
@@ -119,9 +118,8 @@ echo "==> Zip contents:"
 unzip -l "$ZIP_PATH" | sed -n '1,40p' || true
 SIZE="$(du -h "$ZIP_PATH" | cut -f1)"
 
-# ── Workshop preview card ─────────────────────────────────────────────────
-# Rendered from docs/workshop-preview.svg to a 1024x1024 PNG, uploaded separately
-# via the .vdf, so it lives OUTSIDE the zip and never trips the allow-list.
+# Workshop preview card: rendered from docs/workshop-preview.svg to a 1024x1024 PNG and uploaded separately
+# via the .vdf, so it lives outside the zip and never trips the allow-list.
 PREVIEW_SRC="$SRC_DIR/docs/workshop-preview.svg"
 PREVIEW_OUT="$DIST_DIR/preview.png"
 ABS_PREVIEW=""
@@ -139,7 +137,7 @@ if [ -f "$PREVIEW_SRC" ]; then
     fi
 fi
 
-# ── Steam Workshop manifest (.vdf) ────────────────────────────────────────
+# Steam Workshop manifest (.vdf)
 VDF_PATH="$DIST_DIR/workshop_item.vdf"
 ABS_CONTENT="$(cd "$TARGET_DIR" && pwd)"
 
@@ -158,12 +156,11 @@ fi
     echo "    \"appid\"          \"$APPID\""
     [ -n "$PUBLISHED_FILE_ID" ] && echo "    \"publishedfileid\" \"$PUBLISHED_FILE_ID\""
     echo "    \"contentfolder\"  \"$ABS_CONTENT\""
-    # "previewfile" is intentionally omitted: Steam rejects a preview image sent through steamcmd and the upload
-    # fails. Set the image by hand on the Workshop page (dist/preview.png is still rendered for that).
+    # No "previewfile": Steam rejects a preview image sent through steamcmd and the upload fails. Set the image by
+    # hand on the Workshop page (dist/preview.png is still rendered for that).
     echo '    "visibility"     "0"'
     echo "    \"title\"          \"$TITLE\""
-    # "description" is intentionally omitted so steamcmd preserves the description
-    # currently set on the Workshop page instead of overwriting it.
+    # No "description", so steamcmd keeps the description set on the Workshop page instead of overwriting it.
     echo "    \"changenote\"     \"${CHANGENOTE}\""
     echo '}'
 } > "$VDF_PATH"

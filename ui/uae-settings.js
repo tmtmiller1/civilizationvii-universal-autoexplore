@@ -7,7 +7,7 @@
 // goes to the store. No imports, so the Node tests can load it directly.
 
 // Per-mod slice of the shared "modSettings" localStorage key, mirrored in-game to GameConfiguration. The same
-// store Emigration uses (ui/emigration-settings.js): Coherent's getItem() can return the FIRST key in the store
+// store Emigration uses (ui/emigration-settings.js): Coherent's getItem() can return the first key in the store
 // instead of the one asked for, so a write only goes ahead when the value read back looks like a settings root,
 // and in-game reads prefer the per-save GameConfiguration copy.
 class ModOptionsStore {

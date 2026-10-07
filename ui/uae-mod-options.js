@@ -7,15 +7,11 @@
 import { CategoryType } from "/core/ui/options/model-options.js";
 import { CategoryData } from "/core/ui/options/options-helpers.js";
 
-// This module runs at SHELL scope (the main menu), so an exception thrown here
-// bubbles into the FrontEnd UI context and can take the whole main menu down,
-// i.e. "the game won't load." The writes below mutate engine-owned objects
-// imported from /core/ui/options; a future game patch could reshape or freeze
-// them (ES modules are strict-mode, so writing a frozen object throws), or make
-// either object null/undefined. The try/catch swallows any write that throws
-// (frozen object, missing property), and the explicit `else` reports the case
-// where the Options model itself is absent, either way the worst outcome is the
-// mod's options simply not appearing under a "Mods" category, never a broken menu.
+// This module runs at shell scope (the main menu), so an exception here bubbles into the FrontEnd UI context and
+// can take the whole main menu down. The writes below mutate engine-owned objects imported from /core/ui/options;
+// a later game patch could freeze or reshape them (ES modules are strict mode, so writing a frozen object throws)
+// or leave either one null. The try/catch swallows a write that throws, and the else branch reports a missing
+// Options model. Either way the worst outcome is the mod's options not appearing under "Mods", never a broken menu.
 try {
   if (!CategoryType || !CategoryData) {
     console.warn(

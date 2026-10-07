@@ -13,8 +13,8 @@
 		<Mod id="base-standard" title="LOC_MODULE_BASE_STANDARD_NAME"/>
 	</Dependencies>
 	<ActionCriteria>
-		<!-- AlwaysMet ensures the patch runs when loading an existing save as well
-		     as when starting a new game, so save resumes keep auto-explore coverage. -->
+		<!-- AlwaysMet, so the patch runs when a save is loaded as well as when a new game starts;
+		     a resumed save keeps its auto-explore coverage. -->
 		<Criteria id="always">
 			<AlwaysMet></AlwaysMet>
 		</Criteria>
