@@ -104,7 +104,7 @@ echo "==> Verifying zip contents against allow-list"
 ALLOW="^${MOD_SLUG}/(${MODINFO}|README\.md|CHANGELOG\.md|LICENSE)$"
 ALLOW="$ALLOW"'|^'"${MOD_SLUG}"'/data/.+\.(xml|sql)$'
 ALLOW="$ALLOW"'|^'"${MOD_SLUG}"'/text/[a-z_]+/ModuleText\.xml$'
-ALLOW="$ALLOW"'|^'"${MOD_SLUG}"'/ui/uae-[a-z-]+\.js$'
+ALLOW="$ALLOW"'|^'"${MOD_SLUG}"'/ui/(uae-[a-z-]+|settings-keeper)\.js$'
 UNEXPECTED="$(unzip -Z1 "$ZIP_PATH" | grep -vE '/$' | grep -vE "$ALLOW" || true)"
 if [ -n "$UNEXPECTED" ]; then
     echo "error: zip contains entries not on the allow-list:"

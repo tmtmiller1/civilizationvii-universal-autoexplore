@@ -5,6 +5,22 @@ Follows [Keep a Changelog](https://keepachangelog.com/) and Semantic
 Versioning. The Steam Workshop change note for each release is generated from the
 matching section below by `release.sh`.
 
+## [1.2.1] - 2026-10-07
+
+Settings that survive a restart: the mod now carries the Tower Settings Keeper.
+
+### Fixed
+- Settings kept after a restart. Civilization VII reads back only the first entry in its mod storage, whichever one
+  a mod asks for, so options set in one session could come back as another mod's data or not at all, and a mod
+  saving its options could copy that data under its own name. Universal Auto Explore now carries the Tower Settings
+  Keeper file, which keeps every mod's settings inside the one entry the game reads correctly and repairs a store
+  another mod has already put out of order, without deleting anything. The unit groups and units chosen in Options
+  now stay chosen after a restart, and so do other mods' options that use the shared settings entry.
+- The file runs before any other script and changes nothing else in the mod. If several mods carry it, or the
+  standalone Tower Settings Keeper is installed too, one copy runs and the newest build wins. Nothing to set up:
+  existing settings carry over. Tower Settings Keeper:
+  [GitHub](https://github.com/tmtmiller1/civilizationvii_tower-settings-keeper), [Steam](https://steamcommunity.com/sharedfiles/filedetails/?id=3815023570).
+
 ## [1.2.0] - 2026-10-01
 
 Options for which units can auto-explore, and civilian units back.
