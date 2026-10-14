@@ -30,7 +30,7 @@ At a glance (for modders):
 
 - **Mod id:** `universal-auto-explore`
 - **Author:** Tower
-- **Version:** 1.2.0
+- **Version:** 1.2.2
 - **Requires:** `base-standard` (the base game). No DLC required.
 
 ---

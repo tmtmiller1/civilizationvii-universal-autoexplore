@@ -5,6 +5,14 @@ Follows [Keep a Changelog](https://keepachangelog.com/) and Semantic
 Versioning. The Steam Workshop change note for each release is generated from the
 matching section below by `release.sh`.
 
+## [1.2.2] - 2026-10-14
+
+A license note. The mod itself plays exactly as in 1.2.1.
+
+### Changed
+- The license now says that Civilization VII and its art and data belong to Firaxis and 2K, and that the game
+  screenshots here are included for illustration.
+
 ## [1.2.1] - 2026-10-07
 
 Settings that survive a restart: the mod now carries the Tower Settings Keeper.
