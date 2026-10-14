@@ -77,7 +77,7 @@ function indentRow(id, indent, tries) {
   });
 }
 
-/** @param {Array<*>} infos @param {(info: *) => void} change Apply a change to each, then redraw it. */
+/** @param {Array<*>} infos @param {(info: *) => void} change */
 function updateRows(infos, change) {
   for (const info of infos) {
     change(info);

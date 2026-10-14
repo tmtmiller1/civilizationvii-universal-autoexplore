@@ -39,7 +39,7 @@ class ModOptionsStore {
     return looksLikeSettingsRoot ? { root: parsed, safe: true } : { root: {}, safe: false };
   }
 
-  /** @param {string} modID @returns {string} The GameConfiguration key for the mod's options. */
+  /** @param {string} modID */
   _gcKey(modID) {
     return "ModOptions_" + modID;
   }
