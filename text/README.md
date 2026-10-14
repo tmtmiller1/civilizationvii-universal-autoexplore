@@ -13,7 +13,7 @@ here and two lines to the modinfo.
 | `en_us/ModuleText.xml` | The source of truth (25 tags): the mod's name and description; the Civilopedia page's title, chapter titles, paragraphs and two search terms (`LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_*`, `LOC_PEDIA_UAE_TERM_*`); and the Options block's header, group labels and tooltips (`LOC_OPTIONS_GROUP_UNIVERSALAUTOEXPLORE`, `LOC_UAE_OPTION_*`). The page's structure is in `data/uae-civilopedia.xml`; the Options rows are built in `ui/uae-options.js`. |
 | `<lang>/ModuleText.xml` | The same tags in one language. |
 
-All ten languages ship as machine translations (2026-10-01) that use the game's own words for its terms (the
+All ten languages ship as translations (2026-10-01) that use the game's own words for its terms (the
 Automate Exploration action, Scouts, Settlers, Commanders, civilian and naval units, Discoveries, Zone of Control,
 Independent Powers), taken from the game's l10n files. Where the Civilopedia page restates the game's own description
 of the action, it follows the game's sentence in that language. To correct one, edit its `<Text>`; to change the English, edit the English and update every language.

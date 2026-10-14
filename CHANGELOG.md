@@ -68,7 +68,7 @@ A Civilopedia page and ten translations.
   units can explore automatically, which are left out, and how to use the action.
 - The mod's name, description and Civilopedia page in ten languages besides
   English: German, Spanish, French, Italian, Japanese, Korean, Polish,
-  Portuguese (Brazil), Russian and Simplified Chinese, machine-translated with
+  Portuguese (Brazil), Russian and Simplified Chinese, translated with
   the game's own terms.
   `text/README.md` explains how to correct or add one.
 

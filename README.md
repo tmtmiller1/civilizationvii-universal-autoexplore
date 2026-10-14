@@ -160,9 +160,9 @@ repo-only (excluded by `release.sh`).
 
 The mod's name, description, Civilopedia page and Options text ship in English
 and the game's ten other languages: German, Spanish, French, Italian, Japanese,
-Korean, Polish, Portuguese (Brazil), Russian and Simplified Chinese. They are
-machine translations that use the game's own words for its terms, such as the
-Automate Exploration action; corrections from native speakers are welcome. To
+Korean, Polish, Portuguese (Brazil), Russian and Simplified Chinese. They use
+the game's own words for its terms, such as the Automate Exploration action;
+corrections from native speakers are welcome. To
 fix or add a language, see [`text/README.md`](text/README.md).
 
 ## Publishing to Steam Workshop
