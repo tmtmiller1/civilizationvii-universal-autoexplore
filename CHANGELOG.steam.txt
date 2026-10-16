@@ -3,6 +3,17 @@ Generated from CHANGELOG.md by scripts/steam-changelog.mjs; release.sh uploads t
 To fix an old Workshop entry, paste the text under its ==== line into that entry's Edit box on the change-notes page.
 A block edited by hand is kept as-is. Delete a block to regenerate it from CHANGELOG.md.
 
+==== 1.2.3 | 2026-10-16 | src 3bf4f5381032 | gen 8d6de9445533 ====
+[b]Version 1.2.3 · 16 October 2026[/b]
+The map lens stays as the game picks it for units the mod gives auto-explore, and selecting units is quicker.
+
+[b]Changed[/b]
+• The mod's description in the Additional Content list now says how to give the action to civilian units and Commanders: turn on Civilian Units in Options > Add-ons. Updated in all eleven languages.
+
+[b]Fixed[/b]
+• The map lens on selection. Giving a unit auto-explore also made the game open the Discovery lens whenever you selected it, so a Warrior, a Missionary or a Trebuchet switched the map away from the default lens. Those units now keep the lens the game would pick without the mod, while Scouts and the game's own explorers and warships still open the Discovery lens. Auto-explore works as before. Lens choices from other mods, such as Map Trix, still apply.
+• Quicker unit selection. Each time the unit panel was rebuilt, about three times per selection and per move, the mod read and parsed every mod's stored settings twice. With Demographics' hall of fame in the store that came to about 44 ms per selection and 35 ms per move, measured in a game. The mod now reads its settings once, keeps them, and reads them again when an option changes and at the start of each of your turns. Changes still apply the next time you select a unit.
+
 ==== 1.2.2 | 2026-10-14 | src b0284f872a84 | gen 72e1e86bb41b ====
 [b]Version 1.2.2 · 14 October 2026[/b]
 A license note. The mod itself plays exactly as in 1.2.1.

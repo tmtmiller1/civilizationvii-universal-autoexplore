@@ -7,6 +7,10 @@ matching section below by `release.sh`.
 
 ## [Unreleased]
 
+## [1.2.3] - 2026-10-16
+
+The map lens stays as the game picks it for units the mod gives auto-explore, and selecting units is quicker.
+
 ### Changed
 - The mod's description in the Additional Content list now says how to give the action to civilian units and
   Commanders: turn on Civilian Units in Options > Add-ons. Updated in all eleven languages.
