@@ -6,9 +6,13 @@
 //
 // It wraps the panel instance's getUnitActions instead of replacing unit-actions.js, so it keeps working
 // alongside a mod that ships its own copy of that file.
+//
+// The panel rebuilds about three times per selection and per move, so the settings are kept between reads (see
+// uae-settings.js). They're also read again at the start of each of the local player's turns, for a change that
+// reached this script neither through the save's copy nor through the window event.
 
 import { classifyUnit } from "/universal-auto-explore/ui/uae-unit-classes.js";
-import { isExploreAllowed } from "/universal-auto-explore/ui/uae-settings.js";
+import { isExploreAllowed, refreshSettings } from "/universal-auto-explore/ui/uae-settings.js";
 
 const EXPLORE = "UNITOPERATION_AUTOMATE_EXPLORE";
 
@@ -53,3 +57,11 @@ class UaeUnitActionsDecorator {
 }
 
 Controls.decorate("unit-actions", (/** @type {*} */ c) => new UaeUnitActionsDecorator(c));
+
+try {
+  engine.on("PlayerTurnActivated", (/** @type {*} */ data) => {
+    if (data && data.player === GameContext.localPlayerID) refreshSettings();
+  });
+} catch (e) {
+  console.warn("[UniversalAutoExplore] could not listen for turn starts:", e);
+}

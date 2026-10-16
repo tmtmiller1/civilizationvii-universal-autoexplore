@@ -2,7 +2,7 @@
 
 Grants the game's built-in **Automate Exploration** action to every military
 unit on land and at sea, not just Scouts, so any of them can be sent off to
-reveal the map on its own. It does not change gameplay balance.
+reveal the map on its own. It doesn't change gameplay balance.
 
 ## At a glance (for players)
 
@@ -23,8 +23,8 @@ cavalry, siege, every ship, and unique units.
   added by future patches, with no mod update.
 - A Civilopedia page, **Automate Exploration** (Game Concepts, under Combat),
   lists which units can explore and how to use the action.
-- It does not touch balance, movement, combat, costs, or base-game files, and is
-  safe to add to an ongoing game or save.
+- Balance, movement, combat and costs stay as the game has them, base-game
+  files are left alone, and it's safe to add to an ongoing game or save.
 
 At a glance (for modders):
 
@@ -62,6 +62,32 @@ behaves without these options.
 - Settings are saved for the game you are in and for new games.
 - The options only hide the action. Which units can auto-explore at all is set
   by the data patch below, which leaves aircraft out, so they are not listed.
+
+## The map lens when you select a unit
+
+Selecting a unit leaves the map on the lens the game would pick without the
+mod. A Warrior, a Missionary or a Galley keeps the default lens. Scouts and the
+game's own explorers and warships still open the Discovery lens, the Founder and
+Settlers get their settling lens, and Merchants get the trade lens.
+Auto-explore still works on every unit that has it.
+
+The base game opens the Discovery lens for every unit tagged
+`UNIT_CLASS_AUTOEXPLORE`
+(`base-standard/ui/interface-modes/interface-mode-unit-selected.js`), the same
+tag that offers the action. So the data patch also marks each unit it tags with
+`UNIT_CLASS_UAE_GRANTED`, and `ui/uae-unit-lens.js` turns the Discovery lens
+into the default lens for those units while the game picks a lens on
+selection. In the Exploration Age the game opens the Discovery lens for every
+warship anyway, so warships keep doing that. Other mods that pick a lens on
+selection, such as Map Trix's commander and religion lenses, still run first.
+If a game update renames the method this hooks, the mod logs one warning and
+these units open the Discovery lens again; auto-explore keeps working.
+The design is in [docs/lens-design.md](docs/lens-design.md).
+
+Status: built and tested offline, not yet watched in game. Before this change,
+a 1.5.0 game showed a Warrior, a Missionary and a Trebuchet switching to the
+Discovery lens with the mod on, alone or with other mods, and keeping the
+default lens with it off.
 
 ## How it works
 
@@ -104,9 +130,6 @@ Why this shape:
   non-combat units. The Civilian Units option starts off, and while it is off
   `ui/uae-unit-actions.js` keeps the action out of their unit panel. Aircraft
   are never tagged; `scripts/validate-sql.mjs` fails if `DOMAIN_AIR` appears.
-  1.0.3 had removed these units over a reported crash. Crash-soak runs with
-  every unit type tagged and dozens of non-combat units auto-exploring did not
-  reproduce it.
 - `INSERT OR IGNORE` skips units that already carry the tag (they collide on
   the `TypeTags (Tag, Type)` primary key), so there is no duplicate-row load
   error and no exclusion list to maintain.
@@ -116,11 +139,16 @@ Why this shape:
 - The `SANDBOX` filter drops the engine test units (`UNIT_SANDBOX`,
   `UNIT_AUDIO_SANDBOX_*`), which never appear in normal play.
 
+Before each grant, a marker statement gives `UNIT_CLASS_UAE_GRANTED` to the
+units that grant is about to tag and that don't have the tag yet, for the map
+lens above. The marker's `Tags` row goes in first, and every row selects
+through its parent table, so a unit missing from a player's game is skipped.
+No game screen lists unit tags, so the marker doesn't show up anywhere.
+
 `UNIT_CLASS_AUTOEXPLORE`, the `Units`/`TypeTags` table names, the
 `FORMATION_CLASS_*` values, and `AGE_*` are engine-owned identifiers and are
-left unchanged. Renaming them would break the effect. Everything author-owned
-(mod id, filename, action-group id, localization tags, author) was renamed for
-this rebuild; no attribution to the original creator remains.
+left unchanged. Renaming them would break the effect. The mod id, file names,
+action-group id, text keys and author are this mod's own.
 
 ## Layout
 
@@ -131,12 +159,14 @@ universal_auto-explore/
   data/uae-civilopedia.xml         # Civilopedia page: Game Concepts > Combat > Automate Exploration
   ui/uae-options.js                # the Options rows (groups and per-unit lists)
   ui/uae-unit-actions.js           # hides the action in the unit panel for groups/units turned off
+  ui/uae-unit-lens.js              # keeps the default lens for units the mod tagged
+  ui/uae-lens-keep.js              # the lens logic, loaded by uae-unit-lens.js
   ui/uae-settings.js               # saved settings (shared modSettings key + per-save copy)
   ui/uae-unit-classes.js           # which group a unit belongs to
   ui/uae-mod-options.js            # registers the shared "Mods" Options category
   text/en_us/ModuleText.xml        # name, description and Civilopedia text (source of truth)
   text/<lang>/ModuleText.xml       # the ten translations; text/README.md explains them
-  tests/                           # translation, Civilopedia page and options checks (npm run verify)
+  tests/                           # translation, Civilopedia, options and lens checks (npm run verify)
   README.md  README.pdf            # this document
   CHANGELOG.md                     # release history (drives the Steam change note)
   CONTRIBUTING.md  LICENSE         # contributor guide + MIT license
@@ -145,9 +175,13 @@ universal_auto-explore/
   images/
     universal-auto-explore-icon.svg  # mod icon
   docs/
+    steam-workshop-description.txt       # Workshop page text (BBCode)
     steam-workshop-description.md        # full Steam store copy (BBCode)
     steam-workshop-description-short.md  # short Steam store copy (BBCode)
     workshop-preview.svg  workshop-preview.png  # Steam preview card
+    BACKLOG.md                           # audit findings and what was decided
+    dig-site-design.md                   # design for sending Explorers to dig sites (not built)
+    lens-design.md                       # the Discovery-lens switch and its fix
   scripts/
     build_readme_pdf.sh            # regenerate README.pdf
 ```
@@ -191,5 +225,6 @@ Steam login.
 
 ## Notes
 
-- Rebuilt against Civilization VII **1.4.1**. Because the effect is set-based,
-  it does not need to be re-verified against a specific unit roster each patch.
+- Tested on Civilization VII **1.5.0**: the crash soak of 2026-10-01, and 1.2.1
+  watched in game alone and with the other Tower mods. Because the effect is
+  set-based, it doesn't need re-checking against each patch's unit roster.

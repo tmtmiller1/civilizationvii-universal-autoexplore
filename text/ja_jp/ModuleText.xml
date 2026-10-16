@@ -2,7 +2,7 @@
 <Database>
     <LocalizedText>
         <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME" Language="ja_JP"><Text>ユニバーサル自動探索</Text></Replace>
-        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="ja_JP"><Text>斥候だけでなく、陸上と海上のすべての軍事ユニットに「探索を自動化」アクションを与え、どのユニットでも自動でマップを探索させられるようにします。基本ゲーム、DLC、独立勢力のユニットに加え、今後のアップデートで追加されるユニットにも対応します。民間人ユニット、司令官、航空機は通常のアクションのままです。進行中のゲームにも追加できます。</Text></Replace>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="ja_JP"><Text>斥候だけでなく、陸上と海上のすべての軍事ユニットに「探索を自動化」アクションを与え、どのユニットでも自動でマップを探索させられるようにします。基本ゲーム、DLC、独立勢力のユニットに加え、今後のアップデートで追加されるユニットにも対応します。民間人ユニットと司令官も、[オプション] > [追加コンテンツ] で「民間人ユニット」をオンにすると使えます。航空機は通常のアクションのままです。進行中のゲームにも追加できます。</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE" Language="ja_JP"><Text>探索を自動化</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_1" Language="ja_JP"><Text>斥候だけでなく、陸上と海上のすべての軍事ユニットが「[B]探索を自動化[/B]」アクションを使えます。探索中のユニットは毎ターン自動で移動し、まだ見ていない地域へ進みます。</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_2" Language="ja_JP"><Text>付近に発見があるか、敵ユニットの支配領域に入ると探索を中止します。</Text></Replace>

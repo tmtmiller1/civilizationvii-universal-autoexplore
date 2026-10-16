@@ -37,4 +37,33 @@ if (/DOMAIN_AIR/i.test(sql)) throw new Error("Scope must NOT include DOMAIN_AIR"
 mustMatch(/UnitType\s+NOT\s+LIKE\s*'%SANDBOX%'/i,
   "Missing SANDBOX exclusion");
 
+// The lens marker. Its Tags row has to come before any TypeTags row that uses it (TypeTags.Tag has a foreign key to
+// Tags, and a failed key at game creation stops every mod loading), and each marker statement must skip units that
+// already carry the game's tag, so the game's own explorers keep the Discovery lens.
+const MARKER = "UNIT_CLASS_UAE_GRANTED";
+const tagsRow = sql.search(/INSERT\s+OR\s+IGNORE\s+INTO\s+Tags\s*\(\s*Tag\s*,\s*Category\s*\)\s*SELECT\s+'UNIT_CLASS_UAE_GRANTED'/i);
+if (tagsRow < 0) throw new Error(`Missing the ${MARKER} Tags row (INSERT OR IGNORE INTO Tags ... SELECT)`);
+if (!/FROM\s+TagCategories\s+\w+\s+WHERE\s+\w+\.Category\s*=\s*'UNIT_CLASS'/i.test(sql)) {
+  throw new Error(`The ${MARKER} Tags row must select through TagCategories`);
+}
+const statements = sql.replace(/--[^\n]*/g, "").split(";").map((st) => st.trim()).filter(Boolean);
+const markerRows = statements.filter((st) => /INTO\s+TypeTags/i.test(st) && st.includes(MARKER));
+if (markerRows.length !== 2) throw new Error(`Expected 2 ${MARKER} marker statements, found ${markerRows.length}`);
+for (const st of markerRows) {
+  if (sql.indexOf(st) < tagsRow) throw new Error(`A ${MARKER} TypeTags row comes before its Tags row`);
+  if (!/JOIN\s+Tags\s+\w+\s+ON\s+\w+\.Tag\s*=\s*'UNIT_CLASS_UAE_GRANTED'/i.test(st)) {
+    throw new Error(`Each ${MARKER} marker statement must select through Tags`);
+  }
+  if (!/NOT\s+EXISTS\s*\(\s*SELECT\s+1\s+FROM\s+TypeTags[^)]*'UNIT_CLASS_AUTOEXPLORE'/i.test(st)) {
+    throw new Error(`Each ${MARKER} marker statement must skip units that already carry UNIT_CLASS_AUTOEXPLORE`);
+  }
+}
+// Each marker sits right before the grant it marks for.
+const grants = statements.filter((st) => /INTO\s+TypeTags/i.test(st) && !st.includes(MARKER));
+for (const [i, st] of markerRows.entries()) {
+  if (statements.indexOf(grants[i]) !== statements.indexOf(st) + 1) {
+    throw new Error(`${MARKER} marker statement ${i + 1} must come right before grant ${i + 1}`);
+  }
+}
+
 console.log("validate-sql: PASS");

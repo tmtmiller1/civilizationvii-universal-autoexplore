@@ -53,7 +53,8 @@
 		</ActionGroup>
 		<!-- High LoadOrder so this runs after every unit type (base, age, and DLC)
 		     has been inserted into the current age's database. The UI scripts add the in-game Options rows and
-		     drop the action from the unit panel for groups or units the player turned off. -->
+		     drop the action from the unit panel for groups or units the player turned off, and keep the map lens the game
+		     would pick for the units the patch tagged. -->
 		<ActionGroup id="universal-auto-explore-grant" scope="game" criteria="always">
 			<Actions>
 				<UpdateDatabase>
@@ -78,6 +79,7 @@
 					<Item>ui/settings-keeper.js</Item>
 					<Item>ui/uae-options.js</Item>
 					<Item>ui/uae-unit-actions.js</Item>
+					<Item>ui/uae-unit-lens.js</Item>
 				</UIScripts>
 				<ImportFiles>
 					<Item>ui/uae-mod-options.js</Item>
@@ -85,6 +87,8 @@
 					<Item>ui/uae-settings.js</Item>
 					<Item>ui/uae-unit-actions.js</Item>
 					<Item>ui/uae-unit-classes.js</Item>
+					<Item>ui/uae-lens-keep.js</Item>
+					<Item>ui/uae-unit-lens.js</Item>
 				</ImportFiles>
 			</Actions>
 			<Properties>

@@ -5,7 +5,7 @@
             <Text>Universal Auto Explore</Text>
         </Row>
         <Row Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION">
-            <Text>Gives the Automate Exploration action to every military unit on land and at sea, not just Scouts, so any of them can be sent off to reveal the map on its own. Covers base-game, DLC and Independent Powers units, and units added by later updates. Civilian units, Commanders and aircraft keep their usual actions. Safe to add to a game in progress.</Text>
+            <Text>Gives the Automate Exploration action to every military unit on land and at sea, not just Scouts, so any of them can be sent off to reveal the map on its own. Covers base-game, DLC and Independent Powers units, and units added by later updates. Civilian units and Commanders can have it too: turn on Civilian Units in Options > Add-ons. Aircraft keep their usual actions. Safe to add to a game in progress.</Text>
         </Row>
 
         <!-- Civilopedia: Game Concepts > Combat > Automate Exploration (data/uae-civilopedia.xml) -->

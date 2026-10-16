@@ -1,9 +1,10 @@
 # Contributing
 
 Thanks for your interest. Universal Auto Explore is a small Civilization VII
-mod: two SQL statements, a Civilopedia page, localized text and a few UI
-scripts for the Options rows. This doc covers the layout, the checks to run
-before you submit, and the conventions it follows.
+mod: two SQL grants and their lens markers, a Civilopedia page, localized
+text and a few UI scripts for the Options rows and the map lens. This doc
+covers the layout, the checks to run before you submit, and the conventions it
+follows.
 
 ## No build step
 
@@ -13,7 +14,8 @@ What ships is exactly the files in the repo. The game applies `data/*.sql` and
 as written. There is no transpile or bundling.
 
 Prefer a set-based SQL change over hand-listing unit types, and keep the UI to
-what the database cannot express (the Options rows and the unit-panel filter).
+what the database cannot express (the Options rows, the unit-panel filter and
+the map lens on selection).
 
 ## Before you submit
 
@@ -52,7 +54,7 @@ same gate before packaging.
 universal-auto-explore.modinfo   mod manifest (one late, AlwaysMet UpdateDatabase action)
 data/grant-autoexplore.sql       the set-based tag patch
 data/uae-civilopedia.xml         Civilopedia page
-ui/                              Options rows, unit-panel filter, saved settings
+ui/                              Options rows, unit-panel filter, map lens, saved settings
 text/<lang>/ModuleText.xml       display name, description, Civilopedia and Options text
 tests/                           Node tests (npm test)
 docs/                            Steam descriptions + workshop preview (not shipped)

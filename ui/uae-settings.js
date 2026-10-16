@@ -3,8 +3,30 @@
 // Which groups and units may use Automate Exploration. Every group but Civilian defaults to on, which is the mod's
 // behavior before these options existed; units default to on, so only an explicit "off" (stored as 0) removes one.
 //
-// The Options screen and the unit panel run in separate script contexts, so nothing is cached here: every read
-// goes to the store. No imports, so the Node tests can load it directly.
+// The shared store holds every mod's data and runs to half a megabyte or more. One read plus parse took about 6 ms in
+// a game on 2026-10-15, and the unit panel checks about three times per selection and per move. So the values are
+// read once and kept, and read again only when they may have changed:
+//   - A write from this module updates the kept values and sends SETTINGS_CHANGED_EVENT on the window. Another copy
+//     of this module that shares the window (one loaded under a different URL) drops its values when it hears it.
+//   - In a game every Options change also goes into the save's copy in GameConfiguration. That's engine state, the
+//     same in every script context, so each check compares the copy's text with the text the values were read with,
+//     and reads again when it differs. A change made on an Options screen that runs in another context reaches the
+//     unit panel this way. The check is one getValue and a string compare.
+//   - refreshSettings() reads again whatever the copy says; the unit panel calls it at the start of each local turn.
+// No imports, so the Node tests can load it directly.
+
+export const SETTINGS_CHANGED_EVENT = "universal-auto-explore-settings-changed";
+
+/** @param {*} raw @returns {Record<string, *>|null} The text parsed as a plain object, or null. */
+function parseObject(raw) {
+  if (typeof raw !== "string" || !raw.length) return null;
+  try {
+    const o = JSON.parse(raw);
+    return o && typeof o === "object" && !Array.isArray(o) ? o : null;
+  } catch (_) {
+    return null;
+  }
+}
 
 // Per-mod slice of the shared "modSettings" localStorage key, mirrored in-game to GameConfiguration. The same
 // store Emigration uses (ui/emigration-settings.js): Coherent's getItem() can return the first key in the store
@@ -54,14 +76,13 @@ class ModOptionsStore {
     }
   }
 
-  /** @param {string} modID @returns {Record<string, *>|null} The mod's options in this save, if any. */
-  _gcLoadAll(modID) {
+  /** @param {string} modID @returns {string|null} The save's copy of the mod's options as stored, or null. */
+  _gcText(modID) {
     const g = this._gameRead();
     if (!g) return null;
     try {
       const raw = g.getValue(this._gcKey(modID));
-      const o = typeof raw === "string" && raw.length ? JSON.parse(raw) : null;
-      return o && typeof o === "object" && !Array.isArray(o) ? o : null;
+      return typeof raw === "string" && raw.length ? raw : null;
     } catch (_) {
       return null;
     }
@@ -70,6 +91,7 @@ class ModOptionsStore {
   /**
    * In-game only: merge one option into the save's copy.
    * @param {string} modID @param {string} optionID @param {*} value
+   * @returns {boolean} Whether the copy was written.
    */
   _gcSave(modID, optionID, value) {
     let edit = null;
@@ -77,43 +99,55 @@ class ModOptionsStore {
       edit = typeof Configuration !== "undefined" && typeof Configuration.editGame === "function"
         ? Configuration.editGame() : null;
     } catch (_) {
-      return;
+      return false;
     }
-    if (!edit || typeof edit.setValue !== "function") return;
-    const all = this._gcLoadAll(modID) || {};
+    if (!edit || typeof edit.setValue !== "function") return false;
+    const all = parseObject(this._gcText(modID)) || {};
     all[optionID] = value;
     try {
       edit.setValue(this._gcKey(modID), JSON.stringify(all));
+      return true;
     } catch (_) {
-      /* ignore */
+      return false;
     }
   }
 
-  /** Write our own slice to both stores. @param {string} modID @param {string} optionID @param {*} value */
+  /**
+   * Write our own slice to both stores.
+   * @param {string} modID @param {string} optionID @param {*} value
+   * @returns {boolean} Whether either store took the value.
+   */
   save(modID, optionID, value) {
+    let shared = false;
     try {
       const { root, safe } = this._readForWrite();
       if (safe) {
         (root[modID] ??= {})[optionID] = value;
         localStorage.setItem("modSettings", JSON.stringify(root));
+        shared = true;
       }
     } catch (_) {
       /* ignore */
     }
-    this._gcSave(modID, optionID, value);
+    return this._gcSave(modID, optionID, value) || shared;
   }
 
-  /** @param {string} modID @param {string} optionID @returns {*} The stored value, or null. */
-  load(modID, optionID) {
-    const all = this._gcLoadAll(modID);
-    if (all && Object.prototype.hasOwnProperty.call(all, optionID)) return all[optionID];
+  /**
+   * Every option the mod has stored: its section of the shared store with the save's copy on top, since in a game
+   * the save's value wins. One read of each.
+   * @param {string} modID
+   * @returns {{values: Record<string, *>, gcText: string|null}} The values and the save's copy they were read with.
+   */
+  loadAll(modID) {
+    const gcText = this._gcText(modID);
+    let section = null;
     try {
-      const raw = localStorage.getItem("modSettings");
-      if (!raw) return null;
-      return JSON.parse(raw)?.[modID]?.[optionID] ?? null;
+      section = parseObject(localStorage.getItem("modSettings"))?.[modID];
     } catch (_) {
-      return null;
+      section = null;
     }
+    const shared = section && typeof section === "object" && !Array.isArray(section) ? section : {};
+    return { values: { ...shared, ...parseObject(gcText) }, gcText };
   }
 }
 
@@ -124,25 +158,69 @@ export const MOD_ID = "universal-auto-explore";
 // Mirrors CLASSES_OFF_BY_DEFAULT in uae-unit-classes.js; kept here so this file stays import-free.
 const OFF_BY_DEFAULT = ["civilian"];
 
+/** @type {{values: Record<string, *>, gcText: string|null}|null} The kept values, null until the first read. */
+let kept = null;
+
+/** Tells this copy's own change events apart from another copy's. */
+const SOURCE = {};
+
+/** @returns {Record<string, *>} The stored options, read from the stores only when they may have changed. */
+function stored() {
+  if (!kept || store._gcText(MOD_ID) !== kept.gcText) kept = store.loadAll(MOD_ID);
+  return kept.values;
+}
+
+/** Read the stores again, for a change from a script context this one can't hear. */
+export function refreshSettings() {
+  kept = store.loadAll(MOD_ID);
+}
+
+/** Store one option, keep it, and tell the rest of the mod. @param {string} optionID @param {*} value */
+function write(optionID, value) {
+  if (!store.save(MOD_ID, optionID, value)) return;
+  if (kept) {
+    kept.values[optionID] = value;
+    kept.gcText = store._gcText(MOD_ID);
+  }
+  try {
+    window.dispatchEvent(new CustomEvent(SETTINGS_CHANGED_EVENT, { detail: { optionID, value, source: SOURCE } }));
+  } catch (_) {
+    /* no window */
+  }
+}
+
+try {
+  window.addEventListener(SETTINGS_CHANGED_EVENT, (/** @type {*} */ event) => {
+    if (event?.detail?.source !== SOURCE) kept = null;
+  });
+} catch (_) {
+  /* no window, as in the Node tests */
+}
+
+/** @param {Record<string, *>} values @param {string} cls @returns {boolean} */
+function classOn(values, cls) {
+  const v = values["class_" + cls];
+  return v == null ? !OFF_BY_DEFAULT.includes(cls) : v !== 0;
+}
+
 /** @param {string} cls A UNIT_CLASSES key. @returns {boolean} Whether the group may auto-explore. */
 export function isClassEnabled(cls) {
-  const v = store.load(MOD_ID, "class_" + cls);
-  return v == null ? !OFF_BY_DEFAULT.includes(cls) : v !== 0;
+  return classOn(stored(), cls);
 }
 
 /** @param {string} cls A UNIT_CLASSES key. @param {boolean} on */
 export function setClassEnabled(cls, on) {
-  store.save(MOD_ID, "class_" + cls, on ? 1 : 0);
+  write("class_" + cls, on ? 1 : 0);
 }
 
 /** @param {string} unitType e.g. UNIT_SWORDSMAN. @returns {boolean} Whether the unit may auto-explore. */
 export function isUnitEnabled(unitType) {
-  return store.load(MOD_ID, "unit_" + unitType) !== 0;
+  return stored()["unit_" + unitType] !== 0;
 }
 
 /** @param {string} unitType e.g. UNIT_SWORDSMAN. @param {boolean} on */
 export function setUnitEnabled(unitType, on) {
-  store.save(MOD_ID, "unit_" + unitType, on ? 1 : 0);
+  write("unit_" + unitType, on ? 1 : 0);
 }
 
 /**
@@ -153,5 +231,6 @@ export function setUnitEnabled(unitType, on) {
  */
 export function isExploreAllowed(cls, unitType) {
   if (!cls) return true;
-  return isClassEnabled(cls) && isUnitEnabled(unitType);
+  const values = stored();
+  return classOn(values, cls) && values["unit_" + unitType] !== 0;
 }

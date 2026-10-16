@@ -2,7 +2,7 @@
 <Database>
     <LocalizedText>
         <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_NAME" Language="ko_KR"><Text>유니버설 자동 탐험</Text></Replace>
-        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="ko_KR"><Text>정찰병뿐 아니라 육상과 해상의 모든 군사 유닛에 '자동 탐험' 행동을 부여하여, 어떤 유닛이든 스스로 지도를 밝히도록 보낼 수 있습니다. 기본 게임, DLC, 독립 세력의 유닛은 물론 이후 업데이트로 추가되는 유닛에도 적용됩니다. 민간 유닛, 사령관, 항공기는 기존 행동을 그대로 유지합니다. 진행 중인 게임에도 추가할 수 있습니다.</Text></Replace>
+        <Replace Tag="LOC_MOD_UNIVERSAL_AUTO_EXPLORE_DESCRIPTION" Language="ko_KR"><Text>정찰병뿐 아니라 육상과 해상의 모든 군사 유닛에 '자동 탐험' 행동을 부여하여, 어떤 유닛이든 스스로 지도를 밝히도록 보낼 수 있습니다. 기본 게임, DLC, 독립 세력의 유닛은 물론 이후 업데이트로 추가되는 유닛에도 적용됩니다. 민간 유닛과 사령관도 옵션 > 추가 콘텐츠에서 민간 유닛을 켜면 이 행동을 얻습니다. 항공기는 기존 행동을 그대로 유지합니다. 진행 중인 게임에도 추가할 수 있습니다.</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_TITLE" Language="ko_KR"><Text>자동 탐험</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_1" Language="ko_KR"><Text>정찰병뿐 아니라 육상과 해상의 모든 군사 유닛이 [B]자동 탐험[/B] 행동을 사용할 수 있습니다. 탐험 중인 유닛은 매 턴 스스로 이동하여 아직 보지 못한 지역으로 나아갑니다.</Text></Replace>
         <Replace Tag="LOC_PEDIA_CONCEPTS_PAGE_UAE_AUTOEXPLORE_CHAPTER_CONTENT_PARA_2" Language="ko_KR"><Text>근처에 발견물이 있거나 적 유닛의 통제 지역으로 이동하면 탐험을 중지합니다.</Text></Replace>
