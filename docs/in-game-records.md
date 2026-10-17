@@ -25,3 +25,10 @@ Game 1.5.0, windowed 1600x1000, every other user mod off, UAE's `Mods/` copy wit
   on turns 2-4: Warrior 68,6 to 69,8 to 68,6, Scout 67,6 to 68,7 to 67,7. So the vanilla side of "keeps exploring" is
   watched.
 - Odd, not judged: on both sides the Warrior stepped back and forth between 68,6 and 69,8.
+
+## 2026-10-17, with Map Trix (watch run 2, block 2, run MT)
+
+Usual set plus Map Trix 4.2.0, Exploration seed 4242, UAE 1.2.3. Selecting an Army Commander opened Map Trix's
+`bz-commander-lens` and a Missionary its `bz-religion-lens`; a Scout opened `fxs-discovery-lens` and a Merchant
+`fxs-trade-lens`; every deselect went back to `fxs-default-lens`. So another mod's lens choice still applies with UAE
+on, as the 1.2.3 changelog says. No error line from either mod.

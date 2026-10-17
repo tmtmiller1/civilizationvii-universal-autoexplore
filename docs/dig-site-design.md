@@ -1,7 +1,8 @@
 # Sending Explorers to the nearest dig site
 
-Status: design only; the code isn't written. A lab probe comes next (listing dig sites from script and sending an
-Explorer to one), and the owner decides after reading this whether to build it.
+Status: design only; the code isn't written. The probe's first half has run: dig sites appear only after an Explorer
+researches a continent (below, "When the game places dig sites"). Sending an Explorer to one is still to run, and
+the owner decides after reading this whether to build it.
 
 ## What players asked for
 
@@ -131,3 +132,23 @@ Run in a Modern Age lab game with an Explorer, before any code:
    fires.
 
 Each step either backs this design or changes it; the build waits for those answers and the owner's go-ahead.
+
+### When the game places dig sites
+
+Watched 2026-10-17 (`w2f-dig3`, Modern seed 4242, usual set, `devtools/dig3-game.js`): the game places dig sites only
+when an Explorer uses Research Artifacts on a University or Museum. At Modern turn 1 the map had none, and still none
+after Natural History. Natural History only opens the research ("This continent's Exploration Age Ruins can be
+researched by an Explorer at a University or Museum."). An Explorer on the capital's University at 62,24 ran it: the
+game fired `RuinSitesResearched` once and added two `IMPROVEMENT_RUINS` on the same continent (66,23 Rainforest,
+60,37 Marsh), and the continent couldn't be researched again for that age. Hegemony alone added nothing; a second
+research then added four Antiquity sites (67,16, 68,22, 67,19, 62,21), six in all, and the continent read "Ruins from
+all Ages have already been researched". With Natural History's mastery, ten natural-wonder tiles carried an artifact.
+Every site belonged to owner 63, not to the player or to nobody, so the probe's path, arrival and Excavate steps
+didn't run: its site filter only kept the player's and unowned tiles. So an Explorer has nothing to dig until someone
+researches the continent, and the sites can sit on another owner's land.
+
+The data says the same: Modern's map generator places no discoveries (`Ages.GenerateDiscoveries` 0 in `ages.xml`),
+Natural History's effect only opens archaeology (`EFFECT_PLAYER_OPEN_ARCHAEOLOGY`), and the tutorial waits on
+`RuinSitesResearched` (`base-standard` `tutorial-items-modern.js`). Steps 3 to 5 of the probe (the path, the arrival
+over turns, Excavate in and out of a major's borders) are still owed: widen `dig3-game.js`'s site filter to every owner
+but a major at peace and run it once more.
