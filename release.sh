@@ -85,7 +85,7 @@ rsync -a \
     --exclude='images' --exclude='scripts' --exclude='reports' --exclude='*.bak' \
     --exclude='CONTRIBUTING.md' --exclude='README.pdf' --exclude='tests' --exclude='text/README.md' \
     --exclude='package.json' --exclude='package-lock.json' \
-    --exclude='node_modules' --exclude='eslint.config.*' \
+    --exclude='node_modules' --exclude='eslint.config.*' --exclude='devtools' \
     "$SRC_DIR"/ "$TARGET_DIR"/
 
 echo "==> Verifying modinfo at zip root"
