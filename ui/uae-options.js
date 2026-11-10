@@ -10,7 +10,7 @@
 
 import { CategoryType, OptionType, Options } from "/core/ui/options/model-options.js";
 import "/universal-auto-explore/ui/uae-mod-options.js";
-import { UNIT_CLASSES, groupUnitsByClass } from "/universal-auto-explore/ui/uae-unit-classes.js";
+import { UNIT_CLASSES, groupUnitsByClass, reconTypesFrom } from "/universal-auto-explore/ui/uae-unit-classes.js";
 import {
   isClassEnabled, isUnitEnabled, setClassEnabled, setUnitEnabled
 } from "/universal-auto-explore/ui/uae-settings.js";
@@ -42,7 +42,7 @@ function unitsByClass() {
       } catch (_) {
         return tag;
       }
-    });
+    }, reconTypesFrom(GameInfo.TypeTags));
   } catch (e) {
     console.warn("[UniversalAutoExplore] could not read the Units table:", e);
     return groupUnitsByClass([], String);

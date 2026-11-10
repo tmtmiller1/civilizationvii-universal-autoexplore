@@ -5,6 +5,16 @@ Follows [Keep a Changelog](https://keepachangelog.com/) and Semantic
 Versioning. The Steam Workshop change note for each release is generated from the
 matching section below by `release.sh`.
 
+## [1.2.5] - 2026-11-10
+
+Works with the Civilization VII 1.5.1 update.
+
+### Fixed
+- Scouts keep Automate Exploration on 1.5.1. The update changed what kind of unit the Scout, Tehina and Sherpa are,
+  and the mod then counted them as civilian units, which are off by default, so the button went missing from them.
+  They're back under Scouts in Options > Add-ons and the button is on their unit panel again. Scout-type units added
+  by other mods are picked up the same way.
+
 ## [1.2.4] - 2026-10-17
 
 - License: from this version the mod is under the Tower Mod License 1.0, in LICENSE. You can still play it, read the

@@ -6,7 +6,9 @@
 // URL, plays the part of a script context with its own kept values.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { classifyUnit, groupUnitsByClass, UNIT_CLASSES, CLASSES_OFF_BY_DEFAULT } from "../ui/uae-unit-classes.js";
+import {
+  classifyUnit, groupUnitsByClass, reconTypesFrom, UNIT_CLASSES, CLASSES_OFF_BY_DEFAULT
+} from "../ui/uae-unit-classes.js";
 
 const row = (UnitType, CoreClass, Domain, Name = `LOC_${UnitType}_NAME`) => ({ UnitType, CoreClass, Domain, Name });
 
@@ -37,6 +39,33 @@ test("classes: Scouts by CoreClass, military by domain, non-combat as civilian, 
   });
   assert.equal(classifyUnit(null), null);
   assert.equal(classifyUnit({}), null);
+});
+
+test("classes: from 1.5.1 the Scout is CORE_CLASS_SUPPORT and its UNIT_CLASS_RECON tag keeps it a scout", () => {
+  const tags = [
+    { Type: "UNIT_SCOUT", Tag: "UNIT_CLASS_RECON" }, { Type: "UNIT_SCOUT", Tag: "UNIT_CLASS_AUTOEXPLORE" },
+    { Type: "UNIT_TEHINA", Tag: "UNIT_CLASS_RECON" }, { Type: "UNIT_SHERPA", Tag: "UNIT_CLASS_RECON" },
+    { Type: "UNIT_JAGUAR_SLAYER", Tag: "UNIT_CLASS_RECON" }, { Type: "UNIT_GALLEY", Tag: "UNIT_CLASS_RECON" },
+    { Type: "UNIT_SETTLER", Tag: "UNIT_CLASS_CREATE_TOWN" },
+  ];
+  const recon = reconTypesFrom(tags);
+  const rows151 = [
+    row("UNIT_SCOUT", "CORE_CLASS_SUPPORT", "DOMAIN_LAND"),
+    row("UNIT_TEHINA", "CORE_CLASS_SUPPORT", "DOMAIN_LAND"),
+    row("UNIT_SHERPA", "CORE_CLASS_SUPPORT", "DOMAIN_LAND"),
+    row("UNIT_JAGUAR_SLAYER", "CORE_CLASS_MILITARY", "DOMAIN_LAND"),
+    row("UNIT_GALLEY", "CORE_CLASS_MILITARY", "DOMAIN_SEA"),
+    row("UNIT_SETTLER", "CORE_CLASS_SUPPORT", "DOMAIN_LAND"),
+    row("UNIT_CHASQUI", "CORE_CLASS_RECON", "DOMAIN_LAND"),
+  ];
+  assert.deepEqual(Object.fromEntries(rows151.map((r) => [r.UnitType, classifyUnit(r, recon)])), {
+    UNIT_SCOUT: "scouts", UNIT_TEHINA: "scouts", UNIT_SHERPA: "scouts", UNIT_JAGUAR_SLAYER: "land",
+    UNIT_GALLEY: "naval", UNIT_SETTLER: "civilian", UNIT_CHASQUI: "scouts",
+  });
+  assert.equal(classifyUnit(rows151[0]), "civilian", "without the tag set a support unit stays civilian");
+  assert.deepEqual(groupUnitsByClass(rows151, String, recon).scouts.map((u) => u.types[0]).sort(),
+    ["UNIT_CHASQUI", "UNIT_SCOUT", "UNIT_SHERPA", "UNIT_TEHINA"]);
+  assert.equal(reconTypesFrom(null).size, 0);
 });
 
 test("classes: one row per unit name, tiers of a unique unit share a row, sorted by display name", () => {

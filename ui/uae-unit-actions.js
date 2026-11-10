@@ -11,10 +11,13 @@
 // uae-settings.js). They're also read again at the start of each of the local player's turns, for a change that
 // reached this script neither through the save's copy nor through the window event.
 
-import { classifyUnit } from "/universal-auto-explore/ui/uae-unit-classes.js";
+import { classifyUnit, reconTypesFrom } from "/universal-auto-explore/ui/uae-unit-classes.js";
 import { isExploreAllowed, refreshSettings } from "/universal-auto-explore/ui/uae-settings.js";
 
 const EXPLORE = "UNITOPERATION_AUTOMATE_EXPLORE";
+
+/** @type {Set<string>|null} Recon-tagged unit types; the game's tables don't change within a game. */
+let reconTypes = null;
 
 /**
  * @param {*} panel The unit-actions component.
@@ -23,7 +26,9 @@ const EXPLORE = "UNITOPERATION_AUTOMATE_EXPLORE";
 function dropExploreIfOff(panel, unit) {
   if (!Array.isArray(panel.actions) || !panel.actions.some((a) => a?.type === EXPLORE)) return;
   const row = GameInfo.Units.lookup(unit.type);
-  if (!row || isExploreAllowed(classifyUnit(row), row.UnitType)) return;
+  if (!row) return;
+  if (!reconTypes) reconTypes = reconTypesFrom(GameInfo.TypeTags);
+  if (isExploreAllowed(classifyUnit(row, reconTypes), row.UnitType)) return;
   panel.actions = panel.actions.filter((a) => a?.type !== EXPLORE);
 }
 
