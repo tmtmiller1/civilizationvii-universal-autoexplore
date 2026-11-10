@@ -3,6 +3,13 @@ Generated from CHANGELOG.md by scripts/steam-changelog.mjs; release.sh uploads t
 To fix an old Workshop entry, paste the text under its ==== line into that entry's Edit box on the change-notes page.
 A block edited by hand is kept as-is. Delete a block to regenerate it from CHANGELOG.md.
 
+==== 1.2.5 | 2026-11-10 | src 7e9af2e500c7 | gen 79e1575122b1 ====
+[b]Version 1.2.5 · 10 November 2026[/b]
+Works with the Civilization VII 1.5.1 update.
+
+[b]Fixed[/b]
+• Scouts keep Automate Exploration on 1.5.1. The update changed what kind of unit the Scout, Tehina and Sherpa are, and the mod then counted them as civilian units, which are off by default, so the button went missing from them. They're back under Scouts in Options > Add-ons and the button is on their unit panel again. Scout-type units added by other mods are picked up the same way.
+
 ==== 1.2.4 | 2026-10-17 | src 5eb0bef57702 | gen 2903f7cb5021 ====
 [b]Version 1.2.4 · 17 October 2026[/b]
 • License: from this version the mod is under the Tower Mod License 1.0, in LICENSE. You can still play it, read the code and change your own copy for your own games. Reuploading it, reusing its code in other projects and using it to train AI need my written permission. Earlier versions stay under MIT, and ui/settings-keeper.js stays MIT so other mods can keep embedding it.

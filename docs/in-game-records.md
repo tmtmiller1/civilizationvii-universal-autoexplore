@@ -32,3 +32,14 @@ Usual set plus Map Trix 4.2.0, Exploration seed 4242, UAE 1.2.3. Selecting an Ar
 `bz-commander-lens` and a Missionary its `bz-religion-lens`; a Scout opened `fxs-discovery-lens` and a Merchant
 `fxs-trade-lens`; every deselect went back to `fxs-default-lens`. So another mod's lens choice still applies with UAE
 on, as the 1.2.3 changelog says. No error line from either mod.
+
+## 2026-11-10, after the 1.5.1 update: UAE alone, Antiquity
+
+Game 1.5.1, every other user mod off, the 1.2.5 working copy (7ad0a98), turns 1-7.
+
+- The Scout, now `CORE_CLASS_SUPPORT`, shows Automate Exploration with the default settings and walked from 9,7 to
+  5,8 on its own over three turns.
+- The grouping the Options screen uses puts the Scout and the Tehina under Scouts, not Civilian. This was read
+  through the grouping function; the Options screen itself wasn't opened.
+- A Warrior (a granted unit) has the button and the map stays on the default lens; the Scout opens the Discovery lens.
+- No mod lines in the warning log or `Database.log`. Tests 30/30.

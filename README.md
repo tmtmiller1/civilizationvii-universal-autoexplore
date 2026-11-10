@@ -226,8 +226,12 @@ Steam login.
 ## Notes
 
 - Tested on Civilization VII **1.5.0**: the crash soak of 2026-10-01, and 1.2.1
-  watched in game alone and with the other Tower mods. Because the effect is
-  set-based, it doesn't need re-checking against each patch's unit roster.
+  watched in game alone and with the other Tower mods.
+- Tested on Civilization VII **1.5.1** from 1.2.5: a lab game on 2026-11-10 with
+  the mod alone. The action grant is set-based, so new units are picked up
+  without a patch, but the Options groups read the game's unit classes: 1.5.1
+  moved the Scout out of the recon class, and 1.2.5 follows the recon tag
+  instead.
 
 ## Civilopedia History Corrections
 

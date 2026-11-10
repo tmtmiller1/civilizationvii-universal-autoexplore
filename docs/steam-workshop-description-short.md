@@ -1,6 +1,6 @@
 [h1]Universal Auto Explore[/h1]
 
-[b]Tested on Civilization VII 1.5.0[/b]
+[b]Tested on Civilization VII 1.5.0 and 1.5.1[/b]
 Gives the game's built-in Automate Exploration action to every military unit on land and at sea, not only Scouts. Civilian units and Commanders can have it too, behind an option that starts off.
 
 Earlier auto-explore mods were not updated for 1.4.1 and granted the action by listing unit types by hand, which misses new, DLC and unique units and needs a fix each patch. This mod applies the action with set-based database rules that tag every unit at load time, so coverage is complete and a patch that adds units needs no mod update.
